@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -37,7 +38,7 @@
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.lblUsuario = new DevExpress.XtraEditors.LabelControl();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtusuario = new DevExpress.XtraEditors.TextEdit();
+            this.txtUsuario = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.txtPassword = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -52,6 +53,8 @@
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.unitOfWork = new DevExpress.Xpo.UnitOfWork(this.components);
+            this.xpUsuarios = new DevExpress.Xpo.XPCollection(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
@@ -60,7 +63,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtusuario.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUsuario.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
@@ -72,6 +75,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unitOfWork)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xpUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -96,7 +101,7 @@
             this.dataLayoutControl1.Controls.Add(this.lblPassword);
             this.dataLayoutControl1.Controls.Add(this.btnCancel);
             this.dataLayoutControl1.Controls.Add(this.btnIngresar);
-            this.dataLayoutControl1.Controls.Add(this.txtusuario);
+            this.dataLayoutControl1.Controls.Add(this.txtUsuario);
             this.dataLayoutControl1.Controls.Add(this.lblUsuario);
             this.dataLayoutControl1.Controls.Add(this.pictureEdit1);
             this.dataLayoutControl1.Controls.Add(this.txtPassword);
@@ -170,19 +175,19 @@
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
-            // txtusuario
+            // txtUsuario
             // 
-            this.txtusuario.Location = new System.Drawing.Point(12, 311);
-            this.txtusuario.Name = "txtusuario";
-            this.txtusuario.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtusuario.Properties.Appearance.Options.UseFont = true;
-            this.txtusuario.Size = new System.Drawing.Size(321, 30);
-            this.txtusuario.StyleController = this.dataLayoutControl1;
-            this.txtusuario.TabIndex = 6;
+            this.txtUsuario.Location = new System.Drawing.Point(12, 311);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsuario.Properties.Appearance.Options.UseFont = true;
+            this.txtUsuario.Size = new System.Drawing.Size(321, 30);
+            this.txtUsuario.StyleController = this.dataLayoutControl1;
+            this.txtUsuario.TabIndex = 6;
             // 
             // layoutControlItem3
             // 
-            this.layoutControlItem3.Control = this.txtusuario;
+            this.layoutControlItem3.Control = this.txtUsuario;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 299);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(325, 34);
@@ -215,30 +220,34 @@
             // 
             this.btnIngresar.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIngresar.Appearance.Options.UseFont = true;
+            this.btnIngresar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
             this.btnIngresar.Location = new System.Drawing.Point(12, 450);
             this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(158, 33);
+            this.btnIngresar.Size = new System.Drawing.Size(158, 36);
             this.btnIngresar.StyleController = this.dataLayoutControl1;
             this.btnIngresar.TabIndex = 7;
             this.btnIngresar.Text = "Ingresar";
+            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
             // btnCancel
             // 
             this.btnCancel.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Appearance.Options.UseFont = true;
+            this.btnCancel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
             this.btnCancel.Location = new System.Drawing.Point(174, 450);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(158, 33);
+            this.btnCancel.Size = new System.Drawing.Size(158, 36);
             this.btnCancel.StyleController = this.dataLayoutControl1;
             this.btnCancel.TabIndex = 8;
             this.btnCancel.Text = "Salir";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.btnCancel;
             this.layoutControlItem6.Location = new System.Drawing.Point(162, 438);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(162, 47);
+            this.layoutControlItem6.Size = new System.Drawing.Size(162, 50);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 
@@ -275,7 +284,7 @@
             this.layoutControlItem5.Control = this.btnIngresar;
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 438);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(162, 37);
+            this.layoutControlItem5.Size = new System.Drawing.Size(162, 40);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
@@ -289,7 +298,7 @@
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 475);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 478);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
             this.emptySpaceItem2.Size = new System.Drawing.Size(162, 10);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
@@ -305,10 +314,15 @@
             // emptySpaceItem4
             // 
             this.emptySpaceItem4.AllowHotTrack = false;
-            this.emptySpaceItem4.Location = new System.Drawing.Point(0, 485);
+            this.emptySpaceItem4.Location = new System.Drawing.Point(0, 488);
             this.emptySpaceItem4.Name = "emptySpaceItem4";
-            this.emptySpaceItem4.Size = new System.Drawing.Size(324, 22);
+            this.emptySpaceItem4.Size = new System.Drawing.Size(324, 19);
             this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // xpUsuarios
+            // 
+            this.xpUsuarios.ObjectType = typeof(Sistema_Ferreteria.Database.Usuarios);
+            this.xpUsuarios.Session = this.unitOfWork;
             // 
             // frmLogin
             // 
@@ -317,8 +331,9 @@
             this.ClientSize = new System.Drawing.Size(345, 527);
             this.Controls.Add(this.dataLayoutControl1);
             this.Controls.Add(this.layoutControl1);
+            this.IconOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("frmLogin.IconOptions.LargeImage")));
             this.Name = "frmLogin";
-            this.Text = "frmLogin";
+            this.Text = "Login";
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();
@@ -327,7 +342,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtusuario.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUsuario.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
@@ -339,6 +354,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unitOfWork)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xpUsuarios)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -349,7 +366,7 @@
         private DevExpress.XtraLayout.LayoutControlGroup Root;
         private DevExpress.XtraDataLayout.DataLayoutControl dataLayoutControl1;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
-        private DevExpress.XtraEditors.TextEdit txtusuario;
+        private DevExpress.XtraEditors.TextEdit txtUsuario;
         private DevExpress.XtraEditors.LabelControl lblUsuario;
         private DevExpress.XtraEditors.PictureEdit pictureEdit1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
@@ -368,5 +385,7 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem4;
+        private DevExpress.Xpo.UnitOfWork unitOfWork;
+        private DevExpress.Xpo.XPCollection xpUsuarios;
     }
 }

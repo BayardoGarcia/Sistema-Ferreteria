@@ -15,5 +15,6 @@ namespace Sistema_Ferreteria
         {
             InitializeComponent();
         }
+        internal static int idUsuario;
     }
 }
