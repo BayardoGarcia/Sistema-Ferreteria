@@ -25,6 +25,13 @@ namespace Sistema_Ferreteria.Formularios
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txtUsuario.Text) && string.IsNullOrEmpty(txtPassword.Text))
+            {
+                XtraMessageBox.Show("Debe ingresar un usuario y contraseña", "Sistema Ferreteria", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtUsuario.Focus();
+                return;
+            }
+
             if (string.IsNullOrEmpty(txtUsuario.Text))
             {
                 XtraMessageBox.Show("Debe ingresar un usuario", "Sistema Ferreteria", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -44,7 +51,8 @@ namespace Sistema_Ferreteria.Formularios
 
             unit = new UnitOfWork();
             xpusuario = new XPCollection(unit, typeof(Usuarios));
-            string criterio = "[usuario]='" + usuario + "' and [password]='" + password + "'"; //criterio de busqueda
+            //Criterios de busqueda
+            string criterio = "[usuario]='" + usuario + "' and [password]='" + password + "'"; 
             xpusuario.CriteriaString = criterio;
 
             if (xpusuario.Count == 0)
@@ -53,14 +61,10 @@ namespace Sistema_Ferreteria.Formularios
                 return;
             }
             else
-            { //Se encontro al usuario
-
-                Usuarios user = (Usuarios)xpusuario[0];//obtiene los datos del usuario
-                MainMenu.idUsuario = user.idUsuario;
-                MainMenu mainMenu = new MainMenu();
-                mainMenu.Show();
-                this.Hide();
-                //this.DialogResult = DialogResult.OK; //Devuelve OK al formulario principal
+            { //Encuentra al usuario y obtiene su id
+                Usuarios user = (Usuarios)xpusuario[0];
+                PaginaPrincipal.idUsuario = user.idUsuario;
+                this.DialogResult = DialogResult.OK;
             }
 
         }
