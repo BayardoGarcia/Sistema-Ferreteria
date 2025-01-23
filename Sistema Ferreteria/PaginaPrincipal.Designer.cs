@@ -31,15 +31,15 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PaginaPrincipal));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.btnLogin = new DevExpress.XtraBars.BarButtonItem();
+            this.btnLogout = new DevExpress.XtraBars.BarButtonItem();
+            this.slblUsuario = new DevExpress.XtraBars.BarStaticItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.btnLogin = new DevExpress.XtraBars.BarButtonItem();
-            this.btnLogout = new DevExpress.XtraBars.BarButtonItem();
             this.unitOfWork = new DevExpress.Xpo.UnitOfWork(this.components);
-            this.slblUsuario = new DevExpress.XtraBars.BarStaticItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.unitOfWork)).BeginInit();
             this.SuspendLayout();
@@ -60,6 +60,30 @@
             this.ribbonPage1});
             this.ribbonControl1.Size = new System.Drawing.Size(844, 194);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
+            // 
+            // btnLogin
+            // 
+            this.btnLogin.Caption = "Iniciar Sesión";
+            this.btnLogin.Id = 2;
+            this.btnLogin.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLogin.ImageOptions.Image")));
+            this.btnLogin.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLogin.ImageOptions.LargeImage")));
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLogin_ItemClick);
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.Caption = "Cerrar Sesión";
+            this.btnLogout.Id = 3;
+            this.btnLogout.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.ImageOptions.Image")));
+            this.btnLogout.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLogout.ImageOptions.LargeImage")));
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLogout_ItemClick);
+            // 
+            // slblUsuario
+            // 
+            this.slblUsuario.Caption = "barStaticItem1";
+            this.slblUsuario.Id = 4;
+            this.slblUsuario.Name = "slblUsuario";
             // 
             // ribbonPage1
             // 
@@ -94,29 +118,6 @@
             this.ribbonPage2.Name = "ribbonPage2";
             this.ribbonPage2.Text = "ribbonPage2";
             // 
-            // btnLogin
-            // 
-            this.btnLogin.Caption = "Iniciar Sesión";
-            this.btnLogin.Id = 2;
-            this.btnLogin.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.btnLogin.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLogin_ItemClick);
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.Caption = "Cerrar Sesión";
-            this.btnLogout.Id = 3;
-            this.btnLogout.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image1")));
-            this.btnLogout.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage1")));
-            this.btnLogout.Name = "btnLogout";
-            // 
-            // slblUsuario
-            // 
-            this.slblUsuario.Caption = "barStaticItem1";
-            this.slblUsuario.Id = 4;
-            this.slblUsuario.Name = "slblUsuario";
-            // 
             // PaginaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -126,6 +127,7 @@
             this.Controls.Add(this.ribbonStatusBar1);
             this.Name = "PaginaPrincipal";
             this.Text = "MainMenu";
+            this.Load += new System.EventHandler(this.PaginaPrincipal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.unitOfWork)).EndInit();
             this.ResumeLayout(false);
