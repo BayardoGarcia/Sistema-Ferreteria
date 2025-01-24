@@ -14,7 +14,7 @@ using System.Windows.Forms;
 
 namespace Sistema_Ferreteria
 {
-    public partial class PaginaPrincipal : DevExpress.XtraEditors.XtraForm
+    public partial class PaginaPrincipal : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         internal static int idUsuario;
         public PaginaPrincipal()
@@ -84,6 +84,14 @@ namespace Sistema_Ferreteria
             private void ActivarPrivilegioVentas()
         {
             //Activar los submenus para ventas
-        }   
+        }
+
+        private void btnVentas_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmLogin frm = new frmLogin();
+            //frm.idUsuario = idUsuario;
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }
