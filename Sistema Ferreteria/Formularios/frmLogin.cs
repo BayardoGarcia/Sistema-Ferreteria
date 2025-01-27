@@ -15,14 +15,12 @@ namespace Sistema_Ferreteria.Formularios
 {
     public partial class frmLogin : DevExpress.XtraEditors.XtraForm
     {
+        UnitOfWork unit = null;
+        XPCollection xpusuario = null;
         public frmLogin()
         {
             InitializeComponent();
         }
-
-        UnitOfWork unit = null;
-        XPCollection xpusuario = null;
-
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtUsuario.Text) && string.IsNullOrEmpty(txtPassword.Text))
