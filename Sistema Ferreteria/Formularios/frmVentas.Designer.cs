@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVentas));
             this.unitOfWork = new DevExpress.Xpo.UnitOfWork(this.components);
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.lblMonto = new DevExpress.XtraEditors.LabelControl();
             this.gridDetalleVenta = new DevExpress.XtraGrid.GridControl();
             this.gridViewDetalleVenta = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridProducto = new DevExpress.XtraGrid.GridControl();
@@ -59,8 +59,7 @@
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.contextMenuStripDetalleVenta = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.eliminarProductoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.xpDetallesVenta = new DevExpress.Xpo.XPCollection(this.components);
+            this.btnEliminarProducto = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.unitOfWork)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -78,12 +77,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             this.contextMenuStripDetalleVenta.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.xpDetallesVenta)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.labelControl1);
+            this.layoutControl1.Controls.Add(this.lblMonto);
             this.layoutControl1.Controls.Add(this.gridDetalleVenta);
             this.layoutControl1.Controls.Add(this.gridProducto);
             this.layoutControl1.Controls.Add(this.btnAgregarProducto);
@@ -98,17 +96,17 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
-            // labelControl1
+            // lblMonto
             // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(12, 566);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(2);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(53, 24);
-            this.labelControl1.StyleController = this.layoutControl1;
-            this.labelControl1.TabIndex = 7;
-            this.labelControl1.Text = "Total:";
+            this.lblMonto.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMonto.Appearance.Options.UseFont = true;
+            this.lblMonto.Location = new System.Drawing.Point(12, 566);
+            this.lblMonto.Margin = new System.Windows.Forms.Padding(2);
+            this.lblMonto.Name = "lblMonto";
+            this.lblMonto.Size = new System.Drawing.Size(53, 24);
+            this.lblMonto.StyleController = this.layoutControl1;
+            this.lblMonto.TabIndex = 7;
+            this.lblMonto.Text = "Total:";
             // 
             // gridDetalleVenta
             // 
@@ -271,6 +269,7 @@
             this.btnLimpiarProducto.StyleController = this.layoutControl1;
             this.btnLimpiarProducto.TabIndex = 5;
             this.btnLimpiarProducto.Text = "Limpiar";
+            this.btnLimpiarProducto.Click += new System.EventHandler(this.btnLimpiarProducto_Click);
             // 
             // btnFacturar
             // 
@@ -283,6 +282,7 @@
             this.btnFacturar.StyleController = this.layoutControl1;
             this.btnFacturar.TabIndex = 8;
             this.btnFacturar.Text = "Facturar";
+            this.btnFacturar.Click += new System.EventHandler(this.btnFacturar_Click);
             // 
             // Root
             // 
@@ -356,7 +356,7 @@
             // 
             // layoutControlItem5
             // 
-            this.layoutControlItem5.Control = this.labelControl1;
+            this.layoutControlItem5.Control = this.lblMonto;
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 554);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Size = new System.Drawing.Size(938, 28);
@@ -387,20 +387,16 @@
             // 
             this.contextMenuStripDetalleVenta.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStripDetalleVenta.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.eliminarProductoToolStripMenuItem});
+            this.btnEliminarProducto});
             this.contextMenuStripDetalleVenta.Name = "contextMenuStripDetalleVenta";
-            this.contextMenuStripDetalleVenta.Size = new System.Drawing.Size(211, 56);
+            this.contextMenuStripDetalleVenta.Size = new System.Drawing.Size(197, 28);
             // 
-            // eliminarProductoToolStripMenuItem
+            // btnEliminarProducto
             // 
-            this.eliminarProductoToolStripMenuItem.Name = "eliminarProductoToolStripMenuItem";
-            this.eliminarProductoToolStripMenuItem.Size = new System.Drawing.Size(196, 24);
-            this.eliminarProductoToolStripMenuItem.Text = "Eliminar Producto";
-            // 
-            // xpDetallesVenta
-            // 
-            this.xpDetallesVenta.ObjectType = typeof(Sistema_Ferreteria.Database.DetallesVenta);
-            this.xpDetallesVenta.Session = this.unitOfWork;
+            this.btnEliminarProducto.Name = "btnEliminarProducto";
+            this.btnEliminarProducto.Size = new System.Drawing.Size(210, 24);
+            this.btnEliminarProducto.Text = "Eliminar Producto";
+            this.btnEliminarProducto.Click += new System.EventHandler(this.btnEliminarProducto_Click);
             // 
             // frmVentas
             // 
@@ -428,7 +424,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             this.contextMenuStripDetalleVenta.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.xpDetallesVenta)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -457,13 +452,12 @@
         private DevExpress.XtraGrid.GridControl gridDetalleVenta;
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewDetalleVenta;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.LabelControl lblMonto;
         private DevExpress.XtraEditors.SimpleButton btnFacturar;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private System.Windows.Forms.ContextMenuStrip contextMenuStripDetalleVenta;
-        private System.Windows.Forms.ToolStripMenuItem eliminarProductoToolStripMenuItem;
-        private DevExpress.Xpo.XPCollection xpDetallesVenta;
+        private System.Windows.Forms.ToolStripMenuItem btnEliminarProducto;
     }
 }

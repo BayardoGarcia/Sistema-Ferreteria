@@ -117,6 +117,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Encrypt.cs" />
+    <Compile Include="Formularios\frmFacturar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmFacturar.Designer.cs">
+      <DependentUpon>frmFacturar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +178,7 @@
     <Compile Include="ORMDataModelCode\Ventas.Designer.cs">
       <DependentUpon>Ventas.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProductosEnCarrito.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Formularios\frmLogin.resx">
