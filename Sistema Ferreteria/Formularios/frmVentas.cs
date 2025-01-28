@@ -61,7 +61,7 @@ namespace Sistema_Ferreteria.Formularios
                 }
                 //Si el producto ya fue agregado a la lista, actualizamos la cantidad
                 ProductosEnCarrito productoEnCarrito = new ProductosEnCarrito();
-                productoEnCarrito.idProducto = producto.idProducto;
+                productoEnCarrito.IdProducto = producto.idProducto;
                 productoEnCarrito.Producto = producto.nombre;
                 productoEnCarrito.Cantidad = cantidad;
                 productoEnCarrito.Precio = producto.precioUnitario;

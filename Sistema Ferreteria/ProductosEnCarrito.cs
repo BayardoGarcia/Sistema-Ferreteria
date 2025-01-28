@@ -8,7 +8,7 @@ namespace Sistema_Ferreteria
 {
     public class ProductosEnCarrito
     {
-        public int idProducto { get; set; }
+        public int IdProducto { get; set; }
         public string Producto { get; set; }
         public int Cantidad { get; set; }
         public double Precio { get; set; }
