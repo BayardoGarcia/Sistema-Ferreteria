@@ -54,13 +54,13 @@ namespace Sistema_Ferreteria.Formularios
                 }
             }
         }
-        #endregion
-        #region "Metodos de guardado de datos y validacion"
         private void SeleccionTexto(object sender, EventArgs e)
         {
             TextEdit txt = (TextEdit)sender;//sender es el objeto que envia el evento
             txt.SelectAll();//Selecciona todo el texto del control
         }
+        #endregion
+        #region "Metodos de guardado de datos y validacion"
         private bool ValidarDatos()
         {
             bool validado = true;
@@ -146,6 +146,8 @@ namespace Sistema_Ferreteria.Formularios
             DesbloquearControles();
             btnNuevoCliente.Enabled = false;
             gridClientes.Enabled = false;
+            btnCancelar.Enabled = true;
+            btnGuardar.Enabled = true;
             txtNombre.Focus();  
         }
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -154,7 +156,7 @@ namespace Sistema_Ferreteria.Formularios
             {
                 return;
             }
-            if (Editar)//Si se esta editando un cliente
+            if (Editar == true)//Si se esta editando un cliente
             {
                 Actualizar();
             }
