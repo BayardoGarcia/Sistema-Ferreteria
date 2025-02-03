@@ -11,9 +11,11 @@ using System.Windows.Forms;
 
 namespace Sistema_Ferreteria.Formularios
 {
-    public partial class frmRoles : DevExpress.XtraEditors.XtraForm
+    public partial class frmCategorias : DevExpress.XtraEditors.XtraForm
     {
-        public frmRoles()
+        public bool Editar { get; set; }
+        public string IdCategoria { get; set; }
+        public frmCategorias()
         {
             InitializeComponent();
         }
