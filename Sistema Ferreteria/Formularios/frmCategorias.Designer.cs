@@ -33,13 +33,15 @@
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.gridCategorias = new DevExpress.XtraGrid.GridControl();
             this.gridViewCategorias = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboCategoriaPadre = new System.Windows.Forms.ComboBox();
+            this.xpCategorias = new DevExpress.Xpo.XPCollection(this.components);
+            this.unitOfWork = new DevExpress.Xpo.UnitOfWork(this.components);
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtNombreCategoria = new DevExpress.XtraEditors.TextEdit();
-            this.txtDescripcionCategoría = new DevExpress.XtraEditors.TextEdit();
-            this.simpleButton11 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.txtDescripcionCategoria = new DevExpress.XtraEditors.TextEdit();
+            this.btnNuevaCategoria = new DevExpress.XtraEditors.SimpleButton();
+            this.btnGuardar = new DevExpress.XtraEditors.SimpleButton();
+            this.btnCancelar = new DevExpress.XtraEditors.SimpleButton();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
@@ -56,8 +58,6 @@
             this.emptySpaceItem7 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.xpCategorias = new DevExpress.Xpo.XPCollection(this.components);
-            this.unitOfWork = new DevExpress.Xpo.UnitOfWork(this.components);
             this.contextMenuStripCategoria = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.btnEditarCategoria = new System.Windows.Forms.ToolStripMenuItem();
             this.btnEliminarCategoria = new System.Windows.Forms.ToolStripMenuItem();
@@ -65,8 +65,10 @@
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridCategorias)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewCategorias)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xpCategorias)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unitOfWork)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombreCategoria.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDescripcionCategoría.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDescripcionCategoria.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
@@ -83,21 +85,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xpCategorias)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.unitOfWork)).BeginInit();
             this.contextMenuStripCategoria.SuspendLayout();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
             this.layoutControl1.Controls.Add(this.gridCategorias);
-            this.layoutControl1.Controls.Add(this.comboBox1);
+            this.layoutControl1.Controls.Add(this.cboCategoriaPadre);
             this.layoutControl1.Controls.Add(this.labelControl1);
             this.layoutControl1.Controls.Add(this.txtNombreCategoria);
-            this.layoutControl1.Controls.Add(this.txtDescripcionCategoría);
-            this.layoutControl1.Controls.Add(this.simpleButton11);
-            this.layoutControl1.Controls.Add(this.simpleButton2);
-            this.layoutControl1.Controls.Add(this.simpleButton3);
+            this.layoutControl1.Controls.Add(this.txtDescripcionCategoria);
+            this.layoutControl1.Controls.Add(this.btnNuevaCategoria);
+            this.layoutControl1.Controls.Add(this.btnGuardar);
+            this.layoutControl1.Controls.Add(this.btnCancelar);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
@@ -122,16 +122,22 @@
             this.gridViewCategorias.GridControl = this.gridCategorias;
             this.gridViewCategorias.Name = "gridViewCategorias";
             // 
-            // comboBox1
+            // cboCategoriaPadre
             // 
-            this.comboBox1.DataSource = this.xpCategorias;
-            this.comboBox1.DisplayMember = "nombre";
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(579, 40);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(257, 24);
-            this.comboBox1.TabIndex = 7;
-            this.comboBox1.ValueMember = "idCategoria";
+            this.cboCategoriaPadre.DataSource = this.xpCategorias;
+            this.cboCategoriaPadre.DisplayMember = "nombre";
+            this.cboCategoriaPadre.FormattingEnabled = true;
+            this.cboCategoriaPadre.Location = new System.Drawing.Point(579, 40);
+            this.cboCategoriaPadre.Name = "cboCategoriaPadre";
+            this.cboCategoriaPadre.Size = new System.Drawing.Size(257, 24);
+            this.cboCategoriaPadre.TabIndex = 7;
+            this.cboCategoriaPadre.ValueMember = "idCategoria";
+            this.cboCategoriaPadre.SelectedIndexChanged += new System.EventHandler(this.cboCategoriaPadre_SelectedIndexChanged);
+            // 
+            // xpCategorias
+            // 
+            this.xpCategorias.ObjectType = typeof(Sistema_Ferreteria.Database.Categorias);
+            this.xpCategorias.Session = this.unitOfWork;
             // 
             // labelControl1
             // 
@@ -152,46 +158,49 @@
             this.txtNombreCategoria.StyleController = this.layoutControl1;
             this.txtNombreCategoria.TabIndex = 5;
             // 
-            // txtDescripcionCategoría
+            // txtDescripcionCategoria
             // 
-            this.txtDescripcionCategoría.Location = new System.Drawing.Point(165, 70);
-            this.txtDescripcionCategoría.Name = "txtDescripcionCategoría";
-            this.txtDescripcionCategoría.Size = new System.Drawing.Size(671, 22);
-            this.txtDescripcionCategoría.StyleController = this.layoutControl1;
-            this.txtDescripcionCategoría.TabIndex = 6;
+            this.txtDescripcionCategoria.Location = new System.Drawing.Point(165, 70);
+            this.txtDescripcionCategoria.Name = "txtDescripcionCategoria";
+            this.txtDescripcionCategoria.Size = new System.Drawing.Size(671, 22);
+            this.txtDescripcionCategoria.StyleController = this.layoutControl1;
+            this.txtDescripcionCategoria.TabIndex = 6;
             // 
-            // simpleButton11
+            // btnNuevaCategoria
             // 
-            this.simpleButton11.DialogResult = System.Windows.Forms.DialogResult.Yes;
-            this.simpleButton11.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton11.ImageOptions.Image")));
-            this.simpleButton11.Location = new System.Drawing.Point(22, 96);
-            this.simpleButton11.Name = "simpleButton11";
-            this.simpleButton11.Size = new System.Drawing.Size(147, 36);
-            this.simpleButton11.StyleController = this.layoutControl1;
-            this.simpleButton11.TabIndex = 4;
-            this.simpleButton11.Text = "Nueva Categoria";
+            this.btnNuevaCategoria.DialogResult = System.Windows.Forms.DialogResult.Yes;
+            this.btnNuevaCategoria.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevaCategoria.ImageOptions.Image")));
+            this.btnNuevaCategoria.Location = new System.Drawing.Point(22, 96);
+            this.btnNuevaCategoria.Name = "btnNuevaCategoria";
+            this.btnNuevaCategoria.Size = new System.Drawing.Size(147, 36);
+            this.btnNuevaCategoria.StyleController = this.layoutControl1;
+            this.btnNuevaCategoria.TabIndex = 4;
+            this.btnNuevaCategoria.Text = "Nueva Categoria";
+            this.btnNuevaCategoria.Click += new System.EventHandler(this.btnNuevaCategoria_Click);
             // 
-            // simpleButton2
+            // btnGuardar
             // 
-            this.simpleButton2.DialogResult = System.Windows.Forms.DialogResult.No;
-            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.simpleButton2.Location = new System.Drawing.Point(183, 96);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(105, 36);
-            this.simpleButton2.StyleController = this.layoutControl1;
-            this.simpleButton2.TabIndex = 5;
-            this.simpleButton2.Text = "Guardar";
+            this.btnGuardar.DialogResult = System.Windows.Forms.DialogResult.No;
+            this.btnGuardar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.ImageOptions.Image")));
+            this.btnGuardar.Location = new System.Drawing.Point(183, 96);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(105, 36);
+            this.btnGuardar.StyleController = this.layoutControl1;
+            this.btnGuardar.TabIndex = 5;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // simpleButton3
+            // btnCancelar
             // 
-            this.simpleButton3.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.simpleButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
-            this.simpleButton3.Location = new System.Drawing.Point(302, 96);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(92, 36);
-            this.simpleButton3.StyleController = this.layoutControl1;
-            this.simpleButton3.TabIndex = 6;
-            this.simpleButton3.Text = "Cancelar";
+            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancelar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.ImageOptions.Image")));
+            this.btnCancelar.Location = new System.Drawing.Point(302, 96);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(92, 36);
+            this.btnCancelar.StyleController = this.layoutControl1;
+            this.btnCancelar.TabIndex = 6;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // Root
             // 
@@ -244,7 +253,7 @@
             // 
             // layoutControlItem3
             // 
-            this.layoutControlItem3.Control = this.txtDescripcionCategoría;
+            this.layoutControlItem3.Control = this.txtDescripcionCategoria;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 58);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(828, 26);
@@ -253,7 +262,7 @@
             // 
             // layoutControlItem4
             // 
-            this.layoutControlItem4.Control = this.comboBox1;
+            this.layoutControlItem4.Control = this.cboCategoriaPadre;
             this.layoutControlItem4.Location = new System.Drawing.Point(414, 28);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(414, 30);
@@ -264,7 +273,7 @@
             // 
             this.layoutControlItem5.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F);
             this.layoutControlItem5.AppearanceItemCaption.Options.UseFont = true;
-            this.layoutControlItem5.Control = this.simpleButton11;
+            this.layoutControlItem5.Control = this.btnNuevaCategoria;
             this.layoutControlItem5.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.layoutControlItem5.CustomizationFormText = "layoutControlItem1";
             this.layoutControlItem5.Location = new System.Drawing.Point(10, 84);
@@ -279,7 +288,7 @@
             // 
             this.layoutControlItem6.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F);
             this.layoutControlItem6.AppearanceItemCaption.Options.UseFont = true;
-            this.layoutControlItem6.Control = this.simpleButton2;
+            this.layoutControlItem6.Control = this.btnGuardar;
             this.layoutControlItem6.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.layoutControlItem6.CustomizationFormText = "layoutControlItem2";
             this.layoutControlItem6.Location = new System.Drawing.Point(171, 84);
@@ -294,7 +303,7 @@
             // 
             this.layoutControlItem7.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F);
             this.layoutControlItem7.AppearanceItemCaption.Options.UseFont = true;
-            this.layoutControlItem7.Control = this.simpleButton3;
+            this.layoutControlItem7.Control = this.btnCancelar;
             this.layoutControlItem7.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.layoutControlItem7.CustomizationFormText = "layoutControlItem3";
             this.layoutControlItem7.Location = new System.Drawing.Point(290, 84);
@@ -383,11 +392,6 @@
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
             // 
-            // xpCategorias
-            // 
-            this.xpCategorias.ObjectType = typeof(Sistema_Ferreteria.Database.Categorias);
-            this.xpCategorias.Session = this.unitOfWork;
-            // 
             // contextMenuStripCategoria
             // 
             this.contextMenuStripCategoria.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -395,19 +399,21 @@
             this.btnEditarCategoria,
             this.btnEliminarCategoria});
             this.contextMenuStripCategoria.Name = "contextMenuStripCategoria";
-            this.contextMenuStripCategoria.Size = new System.Drawing.Size(200, 52);
+            this.contextMenuStripCategoria.Size = new System.Drawing.Size(211, 80);
             // 
             // btnEditarCategoria
             // 
             this.btnEditarCategoria.Name = "btnEditarCategoria";
             this.btnEditarCategoria.Size = new System.Drawing.Size(210, 24);
             this.btnEditarCategoria.Text = "Editar categoría";
+            this.btnEditarCategoria.Click += new System.EventHandler(this.btnEditarCategoria_Click);
             // 
             // btnEliminarCategoria
             // 
             this.btnEliminarCategoria.Name = "btnEliminarCategoria";
-            this.btnEliminarCategoria.Size = new System.Drawing.Size(199, 24);
+            this.btnEliminarCategoria.Size = new System.Drawing.Size(210, 24);
             this.btnEliminarCategoria.Text = "Eliminar categoría";
+            this.btnEliminarCategoria.Click += new System.EventHandler(this.btnEliminarCategoria_Click);
             // 
             // frmCategorias
             // 
@@ -418,12 +424,15 @@
             this.IconOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("frmCategorias.IconOptions.LargeImage")));
             this.Name = "frmCategorias";
             this.Text = "Categorias";
+            this.Load += new System.EventHandler(this.frmCategorias_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridCategorias)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewCategorias)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xpCategorias)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unitOfWork)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombreCategoria.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDescripcionCategoría.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDescripcionCategoria.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
@@ -440,8 +449,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xpCategorias)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.unitOfWork)).EndInit();
             this.contextMenuStripCategoria.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -454,17 +461,17 @@
         private DevExpress.XtraLayout.LayoutControlGroup Root;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboCategoriaPadre;
         private DevExpress.XtraEditors.TextEdit txtNombreCategoria;
-        private DevExpress.XtraEditors.TextEdit txtDescripcionCategoría;
+        private DevExpress.XtraEditors.TextEdit txtDescripcionCategoria;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
-        private DevExpress.XtraEditors.SimpleButton simpleButton11;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
+        private DevExpress.XtraEditors.SimpleButton btnNuevaCategoria;
+        private DevExpress.XtraEditors.SimpleButton btnGuardar;
+        private DevExpress.XtraEditors.SimpleButton btnCancelar;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
