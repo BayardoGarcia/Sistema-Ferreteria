@@ -65,6 +65,19 @@ namespace Sistema_Ferreteria.Database
             get { return fproveedor; }
             set { SetPropertyValue<Proveedores>(nameof(proveedor), ref fproveedor, value); }
         }
+        string fmarca;
+        [Size(50)]
+        public string marca
+        {
+            get { return fmarca; }
+            set { SetPropertyValue<string>(nameof(marca), ref fmarca, value); }
+        }
+        double fprecioProveedor;
+        public double precioProveedor
+        {
+            get { return fprecioProveedor; }
+            set { SetPropertyValue<double>(nameof(precioProveedor), ref fprecioProveedor, value); }
+        }
         [Association(@"DetallesVentaReferencesProductos")]
         public XPCollection<DetallesVenta> DetallesVentas { get { return GetCollection<DetallesVenta>(nameof(DetallesVentas)); } }
         [Association(@"EntradaProductosReferencesProductos")]
