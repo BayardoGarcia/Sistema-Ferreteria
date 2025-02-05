@@ -78,7 +78,7 @@ namespace Sistema_Ferreteria.Formularios
             entrada.producto = (Productos)unitOfWork.GetObjectByKey(typeof(Productos), IdProducto);
             entrada.cantidad = Convert.ToInt32(nudCantidad.Value);
             entrada.precioCompra = Convert.ToDouble(txtPrecioCompra.Text);
-            entrada.importe = Importe;
+            entrada.importe = Convert.ToDouble(txtImporte.Text);
             entrada.Save();
             unitOfWork.CommitChanges();
             ModificarExistencia();
