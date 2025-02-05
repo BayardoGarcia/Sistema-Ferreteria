@@ -31,18 +31,11 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDetallesEntradaProductos));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.btnNuevaEntrada = new DevExpress.XtraEditors.SimpleButton();
-            this.btnExportarExcel = new DevExpress.XtraEditors.SimpleButton();
-            this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.unitOfWork = new DevExpress.Xpo.UnitOfWork(this.components);
-            this.xpEntradaProductos = new DevExpress.Xpo.XPCollection(this.components);
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.gridEntradaProductos = new DevExpress.XtraGrid.GridControl();
+            this.xpEntradaProductos = new DevExpress.Xpo.XPCollection(this.components);
+            this.unitOfWork = new DevExpress.Xpo.UnitOfWork(this.components);
             this.gridViewEntradaProductos = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.colidEntradaProductos = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colfecha = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcantidad = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -50,21 +43,28 @@
             this.colimporte = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.btnNuevaEntrada = new DevExpress.XtraEditors.SimpleButton();
+            this.btnExportarExcel = new DevExpress.XtraEditors.SimpleButton();
+            this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem5 = new DevExpress.XtraLayout.EmptySpaceItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridEntradaProductos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xpEntradaProductos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unitOfWork)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewEntradaProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.unitOfWork)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xpEntradaProductos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridEntradaProductos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewEntradaProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
@@ -85,81 +85,16 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
-            // btnNuevaEntrada
+            // labelControl1
             // 
-            this.btnNuevaEntrada.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.btnNuevaEntrada.Location = new System.Drawing.Point(12, 40);
-            this.btnNuevaEntrada.Name = "btnNuevaEntrada";
-            this.btnNuevaEntrada.Size = new System.Drawing.Size(142, 36);
-            this.btnNuevaEntrada.StyleController = this.layoutControl1;
-            this.btnNuevaEntrada.TabIndex = 4;
-            this.btnNuevaEntrada.Text = "Nueva Entrada";
-            // 
-            // btnExportarExcel
-            // 
-            this.btnExportarExcel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.btnExportarExcel.Location = new System.Drawing.Point(748, 610);
-            this.btnExportarExcel.Name = "btnExportarExcel";
-            this.btnExportarExcel.Size = new System.Drawing.Size(161, 36);
-            this.btnExportarExcel.StyleController = this.layoutControl1;
-            this.btnExportarExcel.TabIndex = 6;
-            this.btnExportarExcel.Text = "Exportar a Excel";
-            // 
-            // Root
-            // 
-            this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.Root.GroupBordersVisible = false;
-            this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem1,
-            this.emptySpaceItem2,
-            this.layoutControlItem3,
-            this.emptySpaceItem3,
-            this.layoutControlItem2,
-            this.layoutControlItem4,
-            this.emptySpaceItem4,
-            this.emptySpaceItem5});
-            this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(921, 658);
-            this.Root.TextVisible = false;
-            // 
-            // layoutControlItem1
-            // 
-            this.layoutControlItem1.Control = this.btnNuevaEntrada;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 28);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(146, 40);
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem1.TextVisible = false;
-            // 
-            // emptySpaceItem2
-            // 
-            this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(146, 28);
-            this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(755, 40);
-            this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.Control = this.btnExportarExcel;
-            this.layoutControlItem3.Location = new System.Drawing.Point(736, 598);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(165, 40);
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem3.TextVisible = false;
-            // 
-            // emptySpaceItem3
-            // 
-            this.emptySpaceItem3.AllowHotTrack = false;
-            this.emptySpaceItem3.Location = new System.Drawing.Point(0, 598);
-            this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(736, 40);
-            this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // xpEntradaProductos
-            // 
-            this.xpEntradaProductos.ObjectType = typeof(Sistema_Ferreteria.Database.EntradaProductos);
-            this.xpEntradaProductos.Session = this.unitOfWork;
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(263, 12);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(345, 24);
+            this.labelControl1.StyleController = this.layoutControl1;
+            this.labelControl1.TabIndex = 8;
+            this.labelControl1.Text = "Detalles de Entradas de Productos";
             // 
             // gridEntradaProductos
             // 
@@ -171,6 +106,11 @@
             this.gridEntradaProductos.TabIndex = 7;
             this.gridEntradaProductos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewEntradaProductos});
+            // 
+            // xpEntradaProductos
+            // 
+            this.xpEntradaProductos.ObjectType = typeof(Sistema_Ferreteria.Database.EntradaProductos);
+            this.xpEntradaProductos.Session = this.unitOfWork;
             // 
             // gridViewEntradaProductos
             // 
@@ -184,15 +124,7 @@
             this.gridColumn2});
             this.gridViewEntradaProductos.GridControl = this.gridEntradaProductos;
             this.gridViewEntradaProductos.Name = "gridViewEntradaProductos";
-            // 
-            // layoutControlItem2
-            // 
-            this.layoutControlItem2.Control = this.gridEntradaProductos;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 68);
-            this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(901, 530);
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem2.TextVisible = false;
+            this.gridViewEntradaProductos.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridViewEntradaProductos_RowClick);
             // 
             // colidEntradaProductos
             // 
@@ -257,16 +189,87 @@
             this.gridColumn2.VisibleIndex = 6;
             this.gridColumn2.Width = 94;
             // 
-            // labelControl1
+            // btnNuevaEntrada
             // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(263, 12);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(345, 24);
-            this.labelControl1.StyleController = this.layoutControl1;
-            this.labelControl1.TabIndex = 8;
-            this.labelControl1.Text = "Detalles de Entradas de Productos";
+            this.btnNuevaEntrada.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevaEntrada.ImageOptions.Image")));
+            this.btnNuevaEntrada.Location = new System.Drawing.Point(12, 40);
+            this.btnNuevaEntrada.Name = "btnNuevaEntrada";
+            this.btnNuevaEntrada.Size = new System.Drawing.Size(142, 36);
+            this.btnNuevaEntrada.StyleController = this.layoutControl1;
+            this.btnNuevaEntrada.TabIndex = 4;
+            this.btnNuevaEntrada.Text = "Nueva Entrada";
+            this.btnNuevaEntrada.Click += new System.EventHandler(this.btnNuevaEntrada_Click);
+            // 
+            // btnExportarExcel
+            // 
+            this.btnExportarExcel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnExportarExcel.ImageOptions.Image")));
+            this.btnExportarExcel.Location = new System.Drawing.Point(748, 610);
+            this.btnExportarExcel.Name = "btnExportarExcel";
+            this.btnExportarExcel.Size = new System.Drawing.Size(161, 36);
+            this.btnExportarExcel.StyleController = this.layoutControl1;
+            this.btnExportarExcel.TabIndex = 6;
+            this.btnExportarExcel.Text = "Exportar a Excel";
+            this.btnExportarExcel.Click += new System.EventHandler(this.btnExportarExcel_Click);
+            // 
+            // Root
+            // 
+            this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.Root.GroupBordersVisible = false;
+            this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem1,
+            this.emptySpaceItem2,
+            this.layoutControlItem3,
+            this.emptySpaceItem3,
+            this.layoutControlItem2,
+            this.layoutControlItem4,
+            this.emptySpaceItem4,
+            this.emptySpaceItem5});
+            this.Root.Name = "Root";
+            this.Root.Size = new System.Drawing.Size(921, 658);
+            this.Root.TextVisible = false;
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.btnNuevaEntrada;
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 28);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(146, 40);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem1.TextVisible = false;
+            // 
+            // emptySpaceItem2
+            // 
+            this.emptySpaceItem2.AllowHotTrack = false;
+            this.emptySpaceItem2.Location = new System.Drawing.Point(146, 28);
+            this.emptySpaceItem2.Name = "emptySpaceItem2";
+            this.emptySpaceItem2.Size = new System.Drawing.Size(755, 40);
+            this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.btnExportarExcel;
+            this.layoutControlItem3.Location = new System.Drawing.Point(736, 598);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(165, 40);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem3.TextVisible = false;
+            // 
+            // emptySpaceItem3
+            // 
+            this.emptySpaceItem3.AllowHotTrack = false;
+            this.emptySpaceItem3.Location = new System.Drawing.Point(0, 598);
+            this.emptySpaceItem3.Name = "emptySpaceItem3";
+            this.emptySpaceItem3.Size = new System.Drawing.Size(736, 40);
+            this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.gridEntradaProductos;
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 68);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(901, 530);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem2.TextVisible = false;
             // 
             // layoutControlItem4
             // 
@@ -303,15 +306,15 @@
             this.Text = "Detalles de Entradas de Productos";
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridEntradaProductos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xpEntradaProductos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unitOfWork)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewEntradaProductos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.unitOfWork)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xpEntradaProductos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridEntradaProductos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewEntradaProductos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
