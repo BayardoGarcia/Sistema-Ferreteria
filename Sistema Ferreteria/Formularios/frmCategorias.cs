@@ -141,6 +141,7 @@ namespace Sistema_Ferreteria.Formularios
                     {
                         XtraMessageBox.Show("No se puede eliminar la categoria, porque tiene productos asociados", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         unitOfWork.ReloadChangedObjects();
+                        xpCategorias.Reload();
                     }
                 }
 

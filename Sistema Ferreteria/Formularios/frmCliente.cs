@@ -217,6 +217,7 @@ namespace Sistema_Ferreteria.Formularios
                     {
                         MessageBox.Show("No se puede eliminar el cliente seleccionado, ya que tiene registros asociados", "Sistema Ferreteria", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         unitOfWork.ReloadChangedObjects();//Recarga los cambios
+                        xpClientes.Reload();//Recarga los datos
                     }
                 }   
             }

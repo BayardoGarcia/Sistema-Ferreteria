@@ -152,11 +152,23 @@
     <Compile Include="Formularios\frmFacturar.Designer.cs">
       <DependentUpon>frmFacturar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmGestionProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmGestionProductos.Designer.cs">
+      <DependentUpon>frmGestionProductos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmProducto.Designer.cs">
+      <DependentUpon>frmProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmUsuario.cs">
       <SubType>Form</SubType>
@@ -230,6 +242,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmFacturar.resx">
       <DependentUpon>frmFacturar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmGestionProductos.resx">
+      <DependentUpon>frmGestionProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
