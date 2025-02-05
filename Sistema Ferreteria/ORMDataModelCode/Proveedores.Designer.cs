@@ -52,6 +52,12 @@ namespace Sistema_Ferreteria.Database
             get { return fdireccion; }
             set { SetPropertyValue<string>(nameof(direccion), ref fdireccion, value); }
         }
+        DateTime ffechaRegistro;
+        public DateTime fechaRegistro
+        {
+            get { return ffechaRegistro; }
+            set { SetPropertyValue<DateTime>(nameof(fechaRegistro), ref ffechaRegistro, value); }
+        }
         [Association(@"ProductosReferencesProveedores")]
         public XPCollection<Productos> ProductosCollection { get { return GetCollection<Productos>(nameof(ProductosCollection)); } }
     }
