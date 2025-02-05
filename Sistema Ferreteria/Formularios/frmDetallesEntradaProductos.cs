@@ -11,11 +11,14 @@ using System.Windows.Forms;
 
 namespace Sistema_Ferreteria.Formularios
 {
-    public partial class frmEntradaProductos : DevExpress.XtraEditors.XtraForm
+    public partial class frmDetallesEntradaProductos : DevExpress.XtraEditors.XtraForm
     {
-        public frmEntradaProductos()
+        public int IdUsuario { get; set; }
+        public frmDetallesEntradaProductos()
         {
             InitializeComponent();
+            IdUsuario = -1;
         }
+
     }
 }
