@@ -83,7 +83,7 @@ namespace Sistema_Ferreteria.Formularios
         #region "Metodos de eventos de botones"
         private void btnNuevoProveedor_Click(object sender, EventArgs e)
         {
-            BloquearComponentes();
+            DesbloquearComponentes();
             btnGuardar.Enabled = true;
             btnCancelar.Enabled = true;
             btnNuevoProveedor.Enabled = false;
@@ -115,13 +115,13 @@ namespace Sistema_Ferreteria.Formularios
             unitOfWork.CommitChanges();
             xpProveedor.Reload();
             LimpiarComponentes();
-            DesbloquearComponentes();
+            BloquearComponentes();
             btnNuevoProveedor.Enabled = true;
             gridProveedor.Enabled = true;
         }
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            DesbloquearComponentes();
+            BloquearComponentes();
             LimpiarComponentes();
             btnNuevoProveedor.Enabled = true;
             gridProveedor.Enabled = true;

@@ -22,8 +22,8 @@ namespace Sistema_Ferreteria
             sheet.Cells[1, 1] = Titulo1;
             range1 = sheet.get_Range("A1", "I1");
             range1.EntireRow.Font.Bold = true;
-            range1.Font.Size = 18;
-            range1.Font.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Blue);
+            range1.Font.Size = 16;
+            range1.Font.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.DarkGreen);
             range1.HorizontalAlignment = 3;
             range1.VerticalAlignment = 3;
             range1.Merge(true);
@@ -32,8 +32,8 @@ namespace Sistema_Ferreteria
             sheet.Cells[3, 1] = Titulo2;
             range2 = sheet.get_Range("A3", "I3");
             range2.EntireRow.Font.Bold = true;
-            range2.Font.Size = 18;
-            range2.Font.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Blue);
+            range2.Font.Size = 14;
+            range2.Font.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.DarkGreen);
             range2.HorizontalAlignment = 3;
             range2.VerticalAlignment = 3;
             range2.Merge(true);
@@ -97,8 +97,8 @@ namespace Sistema_Ferreteria
             sheet.Cells[1, 1] = Titulo1;
             range1 = sheet.get_Range("A1", "I1");
             range1.EntireRow.Font.Bold = true;
-            range1.Font.Size = 18;
-            range1.Font.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Blue);
+            range1.Font.Size = 16;
+            range1.Font.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.DarkGreen);
             range1.HorizontalAlignment = 3;
             range1.VerticalAlignment = 3;
             range1.Merge(true);
@@ -107,8 +107,8 @@ namespace Sistema_Ferreteria
             sheet.Cells[3, 1] = Titulo2;
             range2 = sheet.get_Range("A3", "I3");
             range2.EntireRow.Font.Bold = true;
-            range2.Font.Size = 18;
-            range2.Font.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Blue);
+            range2.Font.Size = 14;
+            range2.Font.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.DarkGreen);
             range2.HorizontalAlignment = 3;
             range2.VerticalAlignment = 3;
             range2.Merge(true);

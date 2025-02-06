@@ -32,13 +32,6 @@ namespace Sistema_Ferreteria.Database
             get { return fnombre; }
             set { SetPropertyValue<string>(nameof(nombre), ref fnombre, value); }
         }
-        string fdescripcion;
-        [Size(SizeAttribute.Unlimited)]
-        public string descripcion
-        {
-            get { return fdescripcion; }
-            set { SetPropertyValue<string>(nameof(descripcion), ref fdescripcion, value); }
-        }
         Categorias fcategoria;
         [Association(@"ProductosReferencesCategorias")]
         public Categorias categoria
@@ -71,12 +64,6 @@ namespace Sistema_Ferreteria.Database
         {
             get { return fmarca; }
             set { SetPropertyValue<string>(nameof(marca), ref fmarca, value); }
-        }
-        double fprecioProveedor;
-        public double precioProveedor
-        {
-            get { return fprecioProveedor; }
-            set { SetPropertyValue<double>(nameof(precioProveedor), ref fprecioProveedor, value); }
         }
         [Association(@"DetallesVentaReferencesProductos")]
         public XPCollection<DetallesVenta> DetallesVentas { get { return GetCollection<DetallesVenta>(nameof(DetallesVentas)); } }

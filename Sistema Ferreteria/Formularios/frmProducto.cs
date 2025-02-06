@@ -86,7 +86,6 @@ namespace Sistema_Ferreteria.Formularios
         {
             Productos producto = (Productos)unitOfWork.GetObjectByKey(typeof(Productos), IdProducto);
             txtNombreProducto.Text = producto.nombre;
-            txtDescripcionProducto.Text = producto.descripcion;
             txtMarca.Text = producto.marca;
             nudStock.Value = producto.cantidadStock;
             txtPrecio.Text = producto.precioUnitario.ToString();
@@ -99,7 +98,6 @@ namespace Sistema_Ferreteria.Formularios
         {
             Productos producto = (Productos)unitOfWork.GetObjectByKey(typeof(Productos), IdProducto);
             producto.nombre = txtNombreProducto.Text;
-            producto.descripcion = txtDescripcionProducto.Text;
             producto.marca = txtMarca.Text;
             producto.cantidadStock = Convert.ToInt32(nudStock.Value);
             producto.precioUnitario = double.Parse(txtPrecio.Text.ToString());
@@ -114,7 +112,6 @@ namespace Sistema_Ferreteria.Formularios
         {
             Productos producto = new Productos(unitOfWork);
             producto.nombre = txtNombreProducto.Text;
-            producto.descripcion = txtDescripcionProducto.Text;
             producto.marca = txtMarca.Text;
             producto.cantidadStock = Convert.ToInt32(nudStock.Value);
             producto.precioUnitario = double.Parse(txtPrecio.Text.ToString());
@@ -132,13 +129,7 @@ namespace Sistema_Ferreteria.Formularios
             if (string.IsNullOrEmpty(txtNombreProducto.Text))
             {
                 XtraMessageBox.Show("El campo nombre no puede estar vacio", "Sistema Ferreteria", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtDescripcionProducto.Focus();
-                return;
-            }
-            if (string.IsNullOrEmpty(txtDescripcionProducto.Text))
-            {
-                XtraMessageBox.Show("El campo descripcion no puede estar vacio", "Sistema Ferreteria", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtDescripcionProducto.Focus();
+                txtNombreProducto.Focus();
                 return;
             }
             if (string.IsNullOrEmpty(txtMarca.Text))

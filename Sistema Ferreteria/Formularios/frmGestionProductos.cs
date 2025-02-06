@@ -44,9 +44,6 @@ namespace Sistema_Ferreteria.Formularios
             frm.ShowDialog();
             unitOfWork.Reload(producto);
             xpProductos.Reload();
-            btnEditarProducto.Enabled = false;
-            btnEliminarProducto.Enabled = false;
-            btnModificarStock.Enabled = false;
         }
         private void btnEliminarProducto_Click(object sender, EventArgs e)
         {
@@ -68,9 +65,6 @@ namespace Sistema_Ferreteria.Formularios
                     }
                 }
                 xpProductos.Reload();
-                btnEditarProducto.Enabled = false;
-                btnEliminarProducto.Enabled = false;
-                btnModificarStock.Enabled = false;
             }
         }
         private void btnModificarStock_Click(object sender, EventArgs e)
@@ -111,10 +105,6 @@ namespace Sistema_Ferreteria.Formularios
             Productos productos = (Productos)gridViewProductos.GetFocusedRow();
             if (productos == null) return;
             IdProducto = productos.idProducto;
-            //Habilitar botones
-            btnEditarProducto.Enabled = true;
-            btnEliminarProducto.Enabled = true;
-            btnModificarStock.Enabled = true;
         }
         #endregion
     }

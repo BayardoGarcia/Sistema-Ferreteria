@@ -44,7 +44,6 @@
             this.txtPrecio = new DevExpress.XtraEditors.TextEdit();
             this.btnGuardar = new DevExpress.XtraEditors.SimpleButton();
             this.btnCancelar = new DevExpress.XtraEditors.SimpleButton();
-            this.txtDescripcionProducto = new DevExpress.XtraEditors.TextEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.lblProducto = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
@@ -60,7 +59,6 @@
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem5 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.xpProductos = new DevExpress.Xpo.XPCollection(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -72,7 +70,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtNombreProducto.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMarca.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPrecio.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDescripcionProducto.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblProducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
@@ -88,7 +85,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xpProductos)).BeginInit();
             this.SuspendLayout();
@@ -105,7 +101,6 @@
             this.layoutControl1.Controls.Add(this.txtPrecio);
             this.layoutControl1.Controls.Add(this.btnGuardar);
             this.layoutControl1.Controls.Add(this.btnCancelar);
-            this.layoutControl1.Controls.Add(this.txtDescripcionProducto);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
@@ -129,7 +124,7 @@
             this.cboProveedor.DataSource = this.xpProveedores;
             this.cboProveedor.DisplayMember = "nombre";
             this.cboProveedor.FormattingEnabled = true;
-            this.cboProveedor.Location = new System.Drawing.Point(112, 201);
+            this.cboProveedor.Location = new System.Drawing.Point(112, 175);
             this.cboProveedor.Name = "cboProveedor";
             this.cboProveedor.Size = new System.Drawing.Size(317, 24);
             this.cboProveedor.TabIndex = 10;
@@ -146,7 +141,7 @@
             this.cboCategoria.DataSource = this.xpCategorias;
             this.cboCategoria.DisplayMember = "nombre";
             this.cboCategoria.FormattingEnabled = true;
-            this.cboCategoria.Location = new System.Drawing.Point(112, 171);
+            this.cboCategoria.Location = new System.Drawing.Point(112, 145);
             this.cboCategoria.Name = "cboCategoria";
             this.cboCategoria.Size = new System.Drawing.Size(317, 24);
             this.cboCategoria.TabIndex = 9;
@@ -160,7 +155,7 @@
             // 
             // nudStock
             // 
-            this.nudStock.Location = new System.Drawing.Point(112, 116);
+            this.nudStock.Location = new System.Drawing.Point(112, 90);
             this.nudStock.Name = "nudStock";
             this.nudStock.Size = new System.Drawing.Size(317, 23);
             this.nudStock.TabIndex = 7;
@@ -187,7 +182,7 @@
             // 
             // txtMarca
             // 
-            this.txtMarca.Location = new System.Drawing.Point(112, 90);
+            this.txtMarca.Location = new System.Drawing.Point(112, 64);
             this.txtMarca.Name = "txtMarca";
             this.txtMarca.Size = new System.Drawing.Size(317, 22);
             this.txtMarca.StyleController = this.layoutControl1;
@@ -195,7 +190,7 @@
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(112, 145);
+            this.txtPrecio.Location = new System.Drawing.Point(112, 119);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.txtPrecio.Properties.MaskSettings.Set("mask", "f");
@@ -208,7 +203,7 @@
             // 
             this.btnGuardar.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnGuardar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.ImageOptions.Image")));
-            this.btnGuardar.Location = new System.Drawing.Point(235, 231);
+            this.btnGuardar.Location = new System.Drawing.Point(235, 205);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(88, 36);
             this.btnGuardar.StyleController = this.layoutControl1;
@@ -220,21 +215,13 @@
             // 
             this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancelar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.ImageOptions.Image")));
-            this.btnCancelar.Location = new System.Drawing.Point(337, 231);
+            this.btnCancelar.Location = new System.Drawing.Point(337, 205);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(92, 36);
             this.btnCancelar.StyleController = this.layoutControl1;
             this.btnCancelar.TabIndex = 6;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // txtDescripcionProducto
-            // 
-            this.txtDescripcionProducto.Location = new System.Drawing.Point(112, 64);
-            this.txtDescripcionProducto.Name = "txtDescripcionProducto";
-            this.txtDescripcionProducto.Size = new System.Drawing.Size(317, 22);
-            this.txtDescripcionProducto.StyleController = this.layoutControl1;
-            this.txtDescripcionProducto.TabIndex = 11;
             // 
             // Root
             // 
@@ -255,7 +242,6 @@
             this.layoutControlItem8,
             this.emptySpaceItem4,
             this.emptySpaceItem5,
-            this.layoutControlItem9,
             this.layoutControlItem10});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(441, 312);
@@ -274,9 +260,9 @@
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 259);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 233);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(421, 13);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(421, 39);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem2
@@ -291,7 +277,7 @@
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.txtMarca;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 78);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 52);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(421, 26);
             this.layoutControlItem3.Text = "Marca:";
@@ -300,7 +286,7 @@
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.nudStock;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 104);
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 78);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(421, 29);
             this.layoutControlItem4.Text = "Stock Inicial:";
@@ -309,7 +295,7 @@
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.txtPrecio;
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 133);
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 107);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Size = new System.Drawing.Size(421, 26);
             this.layoutControlItem5.Text = "Precio Unitario:";
@@ -318,7 +304,7 @@
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.cboCategoria;
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 159);
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 133);
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Size = new System.Drawing.Size(421, 30);
             this.layoutControlItem6.Text = "Categoria:";
@@ -327,7 +313,7 @@
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.cboProveedor;
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 189);
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 163);
             this.layoutControlItem7.Name = "layoutControlItem7";
             this.layoutControlItem7.Size = new System.Drawing.Size(421, 30);
             this.layoutControlItem7.Text = "Proveedor:";
@@ -356,7 +342,7 @@
             this.layoutControlItem1.Control = this.btnGuardar;
             this.layoutControlItem1.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.layoutControlItem1.CustomizationFormText = "layoutControlItem1";
-            this.layoutControlItem1.Location = new System.Drawing.Point(223, 219);
+            this.layoutControlItem1.Location = new System.Drawing.Point(223, 193);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(92, 40);
             this.layoutControlItem1.TextLocation = DevExpress.Utils.Locations.Left;
@@ -370,7 +356,7 @@
             this.layoutControlItem8.Control = this.btnCancelar;
             this.layoutControlItem8.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.layoutControlItem8.CustomizationFormText = "layoutControlItem2";
-            this.layoutControlItem8.Location = new System.Drawing.Point(325, 219);
+            this.layoutControlItem8.Location = new System.Drawing.Point(325, 193);
             this.layoutControlItem8.Name = "layoutControlItem8";
             this.layoutControlItem8.Size = new System.Drawing.Size(96, 40);
             this.layoutControlItem8.Text = "layoutControlItem2";
@@ -384,7 +370,7 @@
             this.emptySpaceItem4.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F);
             this.emptySpaceItem4.AppearanceItemCaption.Options.UseFont = true;
             this.emptySpaceItem4.CustomizationFormText = "emptySpaceItem1";
-            this.emptySpaceItem4.Location = new System.Drawing.Point(315, 219);
+            this.emptySpaceItem4.Location = new System.Drawing.Point(315, 193);
             this.emptySpaceItem4.MaxSize = new System.Drawing.Size(10, 27);
             this.emptySpaceItem4.MinSize = new System.Drawing.Size(10, 27);
             this.emptySpaceItem4.Name = "emptySpaceItem4";
@@ -399,20 +385,11 @@
             this.emptySpaceItem5.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F);
             this.emptySpaceItem5.AppearanceItemCaption.Options.UseFont = true;
             this.emptySpaceItem5.CustomizationFormText = "emptySpaceItem2";
-            this.emptySpaceItem5.Location = new System.Drawing.Point(0, 219);
+            this.emptySpaceItem5.Location = new System.Drawing.Point(0, 193);
             this.emptySpaceItem5.Name = "emptySpaceItem5";
             this.emptySpaceItem5.Size = new System.Drawing.Size(223, 40);
             this.emptySpaceItem5.Text = "emptySpaceItem2";
             this.emptySpaceItem5.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // layoutControlItem9
-            // 
-            this.layoutControlItem9.Control = this.txtDescripcionProducto;
-            this.layoutControlItem9.Location = new System.Drawing.Point(0, 52);
-            this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(421, 26);
-            this.layoutControlItem9.Text = "Descripcion:";
-            this.layoutControlItem9.TextSize = new System.Drawing.Size(88, 16);
             // 
             // layoutControlItem10
             // 
@@ -450,7 +427,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtNombreProducto.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMarca.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPrecio.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDescripcionProducto.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblProducto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
@@ -466,7 +442,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xpProductos)).EndInit();
             this.ResumeLayout(false);
@@ -494,14 +469,12 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private DevExpress.XtraEditors.SimpleButton btnGuardar;
         private DevExpress.XtraEditors.SimpleButton btnCancelar;
-        private DevExpress.XtraEditors.TextEdit txtDescripcionProducto;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem4;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem5;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
         private DevExpress.Xpo.UnitOfWork unitOfWork;
