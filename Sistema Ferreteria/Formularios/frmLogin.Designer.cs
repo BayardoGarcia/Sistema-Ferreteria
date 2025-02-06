@@ -55,6 +55,8 @@
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.unitOfWork = new DevExpress.Xpo.UnitOfWork(this.components);
             this.xpUsuarios = new DevExpress.Xpo.XPCollection(this.components);
+            this.chkShow = new DevExpress.XtraEditors.CheckEdit();
+            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
@@ -77,6 +79,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.unitOfWork)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xpUsuarios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkShow.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -105,6 +109,7 @@
             this.dataLayoutControl1.Controls.Add(this.lblUsuario);
             this.dataLayoutControl1.Controls.Add(this.pictureEdit1);
             this.dataLayoutControl1.Controls.Add(this.txtPassword);
+            this.dataLayoutControl1.Controls.Add(this.chkShow);
             this.dataLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataLayoutControl1.Location = new System.Drawing.Point(0, 0);
             this.dataLayoutControl1.Name = "dataLayoutControl1";
@@ -118,7 +123,7 @@
             // 
             this.lblPassword.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPassword.Appearance.Options.UseFont = true;
-            this.lblPassword.Location = new System.Drawing.Point(12, 252);
+            this.lblPassword.Location = new System.Drawing.Point(12, 224);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(84, 21);
             this.lblPassword.StyleController = this.dataLayoutControl1;
@@ -153,7 +158,7 @@
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(12, 210);
+            this.txtUsuario.Location = new System.Drawing.Point(12, 182);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuario.Properties.Appearance.Options.UseFont = true;
@@ -165,7 +170,7 @@
             // 
             this.lblUsuario.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsuario.Appearance.Options.UseFont = true;
-            this.lblUsuario.Location = new System.Drawing.Point(12, 185);
+            this.lblUsuario.Location = new System.Drawing.Point(12, 157);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(56, 21);
             this.lblUsuario.StyleController = this.dataLayoutControl1;
@@ -179,13 +184,13 @@
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
-            this.pictureEdit1.Size = new System.Drawing.Size(284, 169);
+            this.pictureEdit1.Size = new System.Drawing.Size(284, 141);
             this.pictureEdit1.StyleController = this.dataLayoutControl1;
             this.pictureEdit1.TabIndex = 4;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(12, 277);
+            this.txtPassword.Location = new System.Drawing.Point(12, 249);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.Properties.Appearance.Options.UseFont = true;
@@ -210,7 +215,8 @@
             this.emptySpaceItem2,
             this.emptySpaceItem3,
             this.emptySpaceItem1,
-            this.emptySpaceItem4});
+            this.emptySpaceItem4,
+            this.layoutControlItem8});
             this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.Size = new System.Drawing.Size(308, 387);
             this.layoutControlGroup1.TextVisible = false;
@@ -220,14 +226,14 @@
             this.layoutControlItem1.Control = this.pictureEdit1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(288, 173);
+            this.layoutControlItem1.Size = new System.Drawing.Size(288, 145);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.lblUsuario;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 173);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 145);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(288, 25);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
@@ -236,7 +242,7 @@
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.txtUsuario;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 198);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 170);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(288, 32);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
@@ -247,7 +253,7 @@
             this.layoutControlItem4.Control = this.txtPassword;
             this.layoutControlItem4.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.layoutControlItem4.CustomizationFormText = "layoutControlItem3";
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 265);
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 237);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(288, 32);
             this.layoutControlItem4.Text = "layoutControlItem3";
@@ -266,7 +272,7 @@
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.lblPassword;
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 240);
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 212);
             this.layoutControlItem7.Name = "layoutControlItem7";
             this.layoutControlItem7.Size = new System.Drawing.Size(288, 25);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
@@ -307,7 +313,7 @@
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 230);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 202);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
             this.emptySpaceItem1.Size = new System.Drawing.Size(288, 10);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
@@ -324,6 +330,25 @@
             // 
             this.xpUsuarios.ObjectType = typeof(Sistema_Ferreteria.Database.Usuarios);
             this.xpUsuarios.Session = this.unitOfWork;
+            // 
+            // chkShow
+            // 
+            this.chkShow.Location = new System.Drawing.Point(12, 281);
+            this.chkShow.Name = "chkShow";
+            this.chkShow.Properties.Caption = "Mostrar Contraseña";
+            this.chkShow.Size = new System.Drawing.Size(284, 24);
+            this.chkShow.StyleController = this.dataLayoutControl1;
+            this.chkShow.TabIndex = 10;
+            this.chkShow.CheckedChanged += new System.EventHandler(this.chkShow_CheckedChanged);
+            // 
+            // layoutControlItem8
+            // 
+            this.layoutControlItem8.Control = this.chkShow;
+            this.layoutControlItem8.Location = new System.Drawing.Point(0, 269);
+            this.layoutControlItem8.Name = "layoutControlItem8";
+            this.layoutControlItem8.Size = new System.Drawing.Size(288, 28);
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem8.TextVisible = false;
             // 
             // frmLogin
             // 
@@ -360,6 +385,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.unitOfWork)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xpUsuarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkShow.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -391,5 +418,7 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem4;
         private DevExpress.Xpo.UnitOfWork unitOfWork;
         private DevExpress.Xpo.XPCollection xpUsuarios;
+        private DevExpress.XtraEditors.CheckEdit chkShow;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
     }
 }

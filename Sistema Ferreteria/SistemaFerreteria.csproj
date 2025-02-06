@@ -122,6 +122,12 @@
   <ItemGroup>
     <Compile Include="Encrypt.cs" />
     <Compile Include="ExcelExport.cs" />
+    <Compile Include="Formularios\frmDetallesUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmDetallesUsuarios.Designer.cs">
+      <DependentUpon>frmDetallesUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmCategorias.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -234,6 +240,9 @@
     <Compile Include="ProductosEnCarrito.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\frmDetallesUsuarios.resx">
+      <DependentUpon>frmDetallesUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmCategorias.resx">
       <DependentUpon>frmCategorias.cs</DependentUpon>
     </EmbeddedResource>

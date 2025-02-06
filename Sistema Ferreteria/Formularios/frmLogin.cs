@@ -66,10 +66,21 @@ namespace Sistema_Ferreteria.Formularios
             }
 
         }
-
+        private void chkShow_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkShow.Checked)
+            {
+                txtPassword.Properties.PasswordChar = '\0';
+            }
+            else
+            {
+                txtPassword.Properties.PasswordChar = '*';
+            }
+        }
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
         }
+
     }
 }

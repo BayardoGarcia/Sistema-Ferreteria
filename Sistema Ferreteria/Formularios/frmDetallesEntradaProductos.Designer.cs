@@ -81,7 +81,7 @@
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(921, 658);
+            this.layoutControl1.Size = new System.Drawing.Size(1113, 658);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -89,7 +89,7 @@
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(263, 12);
+            this.labelControl1.Location = new System.Drawing.Point(316, 12);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(345, 24);
             this.labelControl1.StyleController = this.layoutControl1;
@@ -102,7 +102,7 @@
             this.gridEntradaProductos.Location = new System.Drawing.Point(12, 80);
             this.gridEntradaProductos.MainView = this.gridViewEntradaProductos;
             this.gridEntradaProductos.Name = "gridEntradaProductos";
-            this.gridEntradaProductos.Size = new System.Drawing.Size(897, 526);
+            this.gridEntradaProductos.Size = new System.Drawing.Size(1089, 526);
             this.gridEntradaProductos.TabIndex = 7;
             this.gridEntradaProductos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewEntradaProductos});
@@ -194,7 +194,7 @@
             this.btnNuevaEntrada.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevaEntrada.ImageOptions.Image")));
             this.btnNuevaEntrada.Location = new System.Drawing.Point(12, 40);
             this.btnNuevaEntrada.Name = "btnNuevaEntrada";
-            this.btnNuevaEntrada.Size = new System.Drawing.Size(142, 36);
+            this.btnNuevaEntrada.Size = new System.Drawing.Size(173, 36);
             this.btnNuevaEntrada.StyleController = this.layoutControl1;
             this.btnNuevaEntrada.TabIndex = 4;
             this.btnNuevaEntrada.Text = "Nueva Entrada";
@@ -203,9 +203,9 @@
             // btnExportarExcel
             // 
             this.btnExportarExcel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnExportarExcel.ImageOptions.Image")));
-            this.btnExportarExcel.Location = new System.Drawing.Point(748, 610);
+            this.btnExportarExcel.Location = new System.Drawing.Point(905, 610);
             this.btnExportarExcel.Name = "btnExportarExcel";
-            this.btnExportarExcel.Size = new System.Drawing.Size(161, 36);
+            this.btnExportarExcel.Size = new System.Drawing.Size(196, 36);
             this.btnExportarExcel.StyleController = this.layoutControl1;
             this.btnExportarExcel.TabIndex = 6;
             this.btnExportarExcel.Text = "Exportar a Excel";
@@ -225,7 +225,7 @@
             this.emptySpaceItem4,
             this.emptySpaceItem5});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(921, 658);
+            this.Root.Size = new System.Drawing.Size(1113, 658);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem1
@@ -233,24 +233,24 @@
             this.layoutControlItem1.Control = this.btnNuevaEntrada;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 28);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(146, 40);
+            this.layoutControlItem1.Size = new System.Drawing.Size(177, 40);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(146, 28);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(177, 28);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(755, 40);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(916, 40);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.btnExportarExcel;
-            this.layoutControlItem3.Location = new System.Drawing.Point(736, 598);
+            this.layoutControlItem3.Location = new System.Drawing.Point(893, 598);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(165, 40);
+            this.layoutControlItem3.Size = new System.Drawing.Size(200, 40);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
@@ -259,7 +259,7 @@
             this.emptySpaceItem3.AllowHotTrack = false;
             this.emptySpaceItem3.Location = new System.Drawing.Point(0, 598);
             this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(736, 40);
+            this.emptySpaceItem3.Size = new System.Drawing.Size(893, 40);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem2
@@ -267,14 +267,14 @@
             this.layoutControlItem2.Control = this.gridEntradaProductos;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 68);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(901, 530);
+            this.layoutControlItem2.Size = new System.Drawing.Size(1093, 530);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.labelControl1;
-            this.layoutControlItem4.Location = new System.Drawing.Point(251, 0);
+            this.layoutControlItem4.Location = new System.Drawing.Point(304, 0);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(349, 28);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
@@ -285,22 +285,22 @@
             this.emptySpaceItem4.AllowHotTrack = false;
             this.emptySpaceItem4.Location = new System.Drawing.Point(0, 0);
             this.emptySpaceItem4.Name = "emptySpaceItem4";
-            this.emptySpaceItem4.Size = new System.Drawing.Size(251, 28);
+            this.emptySpaceItem4.Size = new System.Drawing.Size(304, 28);
             this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem5
             // 
             this.emptySpaceItem5.AllowHotTrack = false;
-            this.emptySpaceItem5.Location = new System.Drawing.Point(600, 0);
+            this.emptySpaceItem5.Location = new System.Drawing.Point(653, 0);
             this.emptySpaceItem5.Name = "emptySpaceItem5";
-            this.emptySpaceItem5.Size = new System.Drawing.Size(301, 28);
+            this.emptySpaceItem5.Size = new System.Drawing.Size(440, 28);
             this.emptySpaceItem5.TextSize = new System.Drawing.Size(0, 0);
             // 
             // frmDetallesEntradaProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(921, 658);
+            this.ClientSize = new System.Drawing.Size(1113, 658);
             this.Controls.Add(this.layoutControl1);
             this.Name = "frmDetallesEntradaProductos";
             this.Text = "Detalles de Entradas de Productos";
