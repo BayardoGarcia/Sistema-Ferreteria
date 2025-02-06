@@ -89,7 +89,7 @@ namespace Sistema_Ferreteria.Formularios
                 validado = false;
                 XtraMessageBox.Show("El campo Usuario es obligatorio", "Sistema Ferreteria", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            if (string.IsNullOrEmpty(txtPassword.Text))
+            if (txtPassword.Enabled == true && string.IsNullOrEmpty(txtPassword.Text))
             {
                 validado = false;
                 XtraMessageBox.Show("El campo Contraseña es obligatorio", "Sistema Ferreteria", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -98,6 +98,21 @@ namespace Sistema_Ferreteria.Formularios
             {
                 validado = false;
                 XtraMessageBox.Show("El campo Teléfono es obligatorio", "Sistema Ferreteria", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            if (string.IsNullOrEmpty(txtEmail.Text))
+            {
+                validado = false;
+                XtraMessageBox.Show("El campo Email es obligatorio", "Sistema Ferreteria", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            if (string.IsNullOrEmpty(txtCedula.Text))
+            {
+                validado = false;
+                XtraMessageBox.Show("El campo Cedula es obligatorio", "Sistema Ferreteria", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            if (IdRol == 0)
+            {
+                validado = false;
+                XtraMessageBox.Show("El campo Rol es obligatorio", "Sistema Ferreteria", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             //Se puede modificar si se desea que la cedula sea opcional o no dependiendo de los requerimientos de la ferreteria
             //Si se desea de igual manera solo puede ser usuario, password y rol sean obligatorios
@@ -109,16 +124,16 @@ namespace Sistema_Ferreteria.Formularios
             usuarios.nombre = txtNombre.Text.Trim();
             usuarios.apellido = txtApellido.Text.Trim();
             usuarios.usuario = txtUsuario.Text.Trim();
-            //La clave puede ser modificada si se desea que el usuario pueda cambiar su contraseña por si el cliente lo solicita pero por seguridad no viene en el requerimiento
-            //usuarios.passwoed = Encrypt.GetMD5String(txtPassword.Text.Trim());
+            usuarios.password = Encrypt.GetMD5String(txtPassword.Text.Trim());
+            usuarios.cedula = txtCedula.Text.Trim();
             usuarios.telefono = txtTelefono.Text.Trim();
             usuarios.email = txtEmail.Text.Trim();
             usuarios.fecha = dtpFecha.Value;
             usuarios.rol = (Roles)unitOfWork.GetObjectByKey(typeof(Roles), IdRol);
             usuarios.activo = true;
-            //Proceso de guardado
             usuarios.Save();
             unitOfWork.CommitChanges();
+            gridUsuarios.Enabled = true;
         }
         private void Guardar()
         {
@@ -132,8 +147,7 @@ namespace Sistema_Ferreteria.Formularios
             usuarios.email = txtEmail.Text.Trim();
             usuarios.fecha = dtpFecha.Value;
             usuarios.rol = (Roles)unitOfWork.GetObjectByKey(typeof(Roles), IdRol);
-            usuarios.activo = true;
-            //Proceso de guardado   
+            usuarios.activo = true;  
             usuarios.Save();
             unitOfWork.CommitChanges();
         }
@@ -202,7 +216,9 @@ namespace Sistema_Ferreteria.Formularios
             if (usuarios != null)
             {
                 DesbloquearControles();
+                gridUsuarios.Enabled = false;
                 txtPassword.Enabled = false;
+                txtPassword.Visible = false;
                 //Botones de edicion
                 btnNuevoUsuario.Enabled = false;
                 btnGuardar.Enabled = true;
@@ -211,12 +227,13 @@ namespace Sistema_Ferreteria.Formularios
                 txtNombre.Text = usuarios.nombre;
                 txtApellido.Text = usuarios.apellido;
                 txtUsuario.Text = usuarios.usuario;
+                txtPassword.Text = usuarios.password;
+                txtCedula.Text = usuarios.cedula;
                 txtTelefono.Text = usuarios.telefono;
                 dtpFecha.Value = usuarios.fecha;
                 txtEmail.Text = usuarios.email;
                 IdRol = usuarios.rol.idRol;
                 cboRol.Text = usuarios.rol.rol;
-                //La cedula no se muestra ya que puede usarse como identificador de usuario en caso de una brecha de seguridad
                 IdUsuario = usuarios.idUsuario;
                 Editar = true;
             }
