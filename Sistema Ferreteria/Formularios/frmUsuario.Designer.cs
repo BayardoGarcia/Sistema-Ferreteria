@@ -94,6 +94,8 @@
             this.emptySpaceItem16 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem17 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.chkShow = new DevExpress.XtraEditors.CheckEdit();
+            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xpRoles)).BeginInit();
@@ -141,6 +143,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkShow.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -159,6 +163,7 @@
             this.layoutControl1.Controls.Add(this.txtUsuario);
             this.layoutControl1.Controls.Add(this.txtEmail);
             this.layoutControl1.Controls.Add(this.txtPassword);
+            this.layoutControl1.Controls.Add(this.chkShow);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Margin = new System.Windows.Forms.Padding(4);
@@ -455,6 +460,7 @@
             // 
             this.txtPassword.Location = new System.Drawing.Point(669, 118);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Properties.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(492, 22);
             this.txtPassword.StyleController = this.layoutControl1;
             this.txtPassword.TabIndex = 5;
@@ -494,7 +500,8 @@
             this.emptySpaceItem15,
             this.emptySpaceItem16,
             this.emptySpaceItem17,
-            this.layoutControlItem15});
+            this.layoutControlItem15,
+            this.layoutControlItem7});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(1173, 737);
             this.Root.TextVisible = false;
@@ -844,7 +851,7 @@
             this.emptySpaceItem17.CustomizationFormText = "emptySpaceItem3";
             this.emptySpaceItem17.Location = new System.Drawing.Point(575, 132);
             this.emptySpaceItem17.Name = "emptySpaceItem17";
-            this.emptySpaceItem17.Size = new System.Drawing.Size(578, 41);
+            this.emptySpaceItem17.Size = new System.Drawing.Size(578, 13);
             this.emptySpaceItem17.Text = "emptySpaceItem3";
             this.emptySpaceItem17.TextSize = new System.Drawing.Size(0, 0);
             // 
@@ -856,6 +863,25 @@
             this.layoutControlItem15.Size = new System.Drawing.Size(561, 30);
             this.layoutControlItem15.Text = "Rol:";
             this.layoutControlItem15.TextSize = new System.Drawing.Size(70, 16);
+            // 
+            // chkShow
+            // 
+            this.chkShow.Location = new System.Drawing.Point(587, 157);
+            this.chkShow.Name = "chkShow";
+            this.chkShow.Properties.Caption = "Mostrar Contraseña";
+            this.chkShow.Size = new System.Drawing.Size(574, 24);
+            this.chkShow.StyleController = this.layoutControl1;
+            this.chkShow.TabIndex = 13;
+            this.chkShow.CheckedChanged += new System.EventHandler(this.chkShow_CheckedChanged);
+            // 
+            // layoutControlItem7
+            // 
+            this.layoutControlItem7.Control = this.chkShow;
+            this.layoutControlItem7.Location = new System.Drawing.Point(575, 145);
+            this.layoutControlItem7.Name = "layoutControlItem7";
+            this.layoutControlItem7.Size = new System.Drawing.Size(578, 28);
+            this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem7.TextVisible = false;
             // 
             // frmUsuario
             // 
@@ -913,6 +939,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkShow.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -983,5 +1011,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colactivo;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private DevExpress.XtraEditors.CheckEdit chkShow;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
     }
 }

@@ -69,6 +69,17 @@ namespace Sistema_Ferreteria.Formularios
             }
             IdRol = (int)comboBox.SelectedValue;
         }
+        private void chkShow_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkShow.Checked)
+            {
+                txtPassword.Properties.PasswordChar = '\0';
+            }
+            else
+            {
+                txtPassword.Properties.PasswordChar = '*';
+            }
+        }
         #endregion
         #region "Metodos de guardado de datos y validacion"
         private bool ValidarDatos()
@@ -219,6 +230,8 @@ namespace Sistema_Ferreteria.Formularios
                 gridUsuarios.Enabled = false;
                 txtPassword.Enabled = false;
                 txtPassword.Visible = false;
+                chkShow.Visible = false;
+                chkShow.Enabled = false;
                 //Botones de edicion
                 btnNuevoUsuario.Enabled = false;
                 btnGuardar.Enabled = true;
