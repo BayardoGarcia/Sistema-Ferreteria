@@ -24,10 +24,10 @@ namespace Sistema_Ferreteria.Formularios
         }
         private void frmCliente_Load(object sender, EventArgs e)
         {
+            BloquearControles();
             btnNuevoCliente.Enabled = true;
             if (xpClientes.Count != 0) gridClientes.Enabled = true;
             Editar = false;
-            BloquearControles();
         }
         #region "Metodos simples"
         private void BloquearControles()
@@ -54,11 +54,6 @@ namespace Sistema_Ferreteria.Formularios
                 }
             }
         }
-        private void SeleccionTexto(object sender, EventArgs e)
-        {
-            TextEdit txt = (TextEdit)sender;//sender es el objeto que envia el evento
-            txt.SelectAll();//Selecciona todo el texto del control
-        }
         #endregion
         #region "Metodos de guardado de datos y validacion"
         private bool ValidarDatos()
@@ -83,6 +78,16 @@ namespace Sistema_Ferreteria.Formularios
             {
                 validado = false;
                 XtraMessageBox.Show("El campo Dirección es obligatorio", "Sistema Ferreteria", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            if (string.IsNullOrEmpty(txtCedula.Text))
+            {
+                validado = false;
+                XtraMessageBox.Show("El campo Cedula es obligatoriao", "Sistema Ferreteria", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            if (string.IsNullOrEmpty(txtEmail.Text))
+            {
+                validado = false;
+                XtraMessageBox.Show("El campo Email es obligatorio", "Sistema Ferreteria", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             //Se puede modificar si se desea que la cedula sea opcional o no dependiendo de los requerimientos de la ferreteria
             return validado;
