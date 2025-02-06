@@ -32,22 +32,6 @@ namespace Sistema_Ferreteria.Database
             get { return fnombre; }
             set { SetPropertyValue<string>(nameof(nombre), ref fnombre, value); }
         }
-        string fdescripcion;
-        [Size(SizeAttribute.Unlimited)]
-        public string descripcion
-        {
-            get { return fdescripcion; }
-            set { SetPropertyValue<string>(nameof(descripcion), ref fdescripcion, value); }
-        }
-        Categorias fcategoriaPadre;
-        [Association(@"CategoriasReferencesCategorias")]
-        public Categorias categoriaPadre
-        {
-            get { return fcategoriaPadre; }
-            set { SetPropertyValue<Categorias>(nameof(categoriaPadre), ref fcategoriaPadre, value); }
-        }
-        [Association(@"CategoriasReferencesCategorias")]
-        public XPCollection<Categorias> CategoriasCollection { get { return GetCollection<Categorias>(nameof(CategoriasCollection)); } }
         [Association(@"ProductosReferencesCategorias")]
         public XPCollection<Productos> ProductosCollection { get { return GetCollection<Productos>(nameof(ProductosCollection)); } }
     }

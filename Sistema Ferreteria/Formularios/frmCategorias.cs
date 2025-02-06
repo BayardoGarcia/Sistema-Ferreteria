@@ -17,7 +17,6 @@ namespace Sistema_Ferreteria.Formularios
     {
         public bool Editar { get; set; }
         public int IdCategoria { get; set; }
-        public int IdCategoriaPadre { get; set; }
         public frmCategorias()
         {
             InitializeComponent();
@@ -44,7 +43,6 @@ namespace Sistema_Ferreteria.Formularios
         {
             System.Windows.Forms.ComboBox comboBox = (System.Windows.Forms.ComboBox)sender;
             if (comboBox.SelectedIndex == -1) return;
-            IdCategoriaPadre = (int)comboBox.SelectedValue;
         }
         #endregion
         #region "Metodos de guardado"
@@ -52,17 +50,17 @@ namespace Sistema_Ferreteria.Formularios
         {
             Categorias categorias = (Categorias)unitOfWork.GetObjectByKey(typeof(Categorias), IdCategoria);
             categorias.nombre = txtNombreCategoria.Text.Trim();
-            categorias.descripcion = txtDescripcionCategoria.Text.Trim();
-            categorias.categoriaPadre = (Categorias)unitOfWork.GetObjectByKey(typeof(Categorias), IdCategoriaPadre);
             categorias.Save();
             unitOfWork.CommitChanges();
+            Editar = false;
         }
         private void Guardar()
         {
             Categorias categorias = new Categorias(unitOfWork);
             categorias.nombre = txtNombreCategoria.Text.Trim();
-            categorias.descripcion = txtDescripcionCategoria.Text.Trim();
-            categorias.categoriaPadre = (Categorias)unitOfWork.GetObjectByKey(typeof(Categorias), IdCategoriaPadre);
+            categorias.Save();
+            unitOfWork.CommitChanges();
+            xpCategorias.Reload();
         }
         #endregion
         #region "Eventos de botones"
@@ -94,8 +92,6 @@ namespace Sistema_Ferreteria.Formularios
             gridCategorias.Enabled = true;  
             xpCategorias.Reload();
             txtNombreCategoria.Text = string.Empty;
-            txtDescripcionCategoria.Text = string.Empty;
-            cboCategoriaPadre.SelectedIndex = -1;
         }
         private void btnCancelar_Click(object sender, EventArgs e)
         {
@@ -103,8 +99,6 @@ namespace Sistema_Ferreteria.Formularios
             btnNuevaCategoria.Enabled = true;
             gridCategorias.Enabled = true;
             txtNombreCategoria.Text = string.Empty;
-            txtDescripcionCategoria.Text = string.Empty;
-            cboCategoriaPadre.SelectedIndex = -1;
         }
         #endregion
         #region "Eventos de grid"
@@ -114,9 +108,7 @@ namespace Sistema_Ferreteria.Formularios
             if (categorias != null)
             {
                 txtNombreCategoria.Text = categorias.nombre;
-                txtDescripcionCategoria.Text = categorias.descripcion;
-                IdCategoriaPadre = categorias.categoriaPadre.idCategoria;
-                cboCategoriaPadre.SelectedIndex = IdCategoriaPadre;
+                IdCategoria = categorias.idCategoria;
                 Editar = true;
                 DesbloquearComponentes();
                 btnNuevaCategoria.Enabled = false;
@@ -146,7 +138,6 @@ namespace Sistema_Ferreteria.Formularios
                 }
 
             }
-        
         }
         #endregion
     }

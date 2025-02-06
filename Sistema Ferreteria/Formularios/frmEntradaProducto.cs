@@ -56,7 +56,7 @@ namespace Sistema_Ferreteria.Formularios
         {
             double cantidad = Convert.ToDouble(nudCantidad.Value);
             Importe = cantidad * PrecioCompra;
-            lblImporte.Text = "Importe: " + Importe;
+            txtImporte.Text= Importe.ToString();
         }
         private void txtPrecioCompra_KeyPress(object sender, KeyPressEventArgs e)
         {

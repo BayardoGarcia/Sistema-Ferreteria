@@ -28,7 +28,8 @@ namespace Sistema_Ferreteria
             //Aplication Settings
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PaginaPrincipal());
+            //Application.Run(new PaginaPrincipal());
+            Application.Run(new frmCategorias());
         }
     }
 }

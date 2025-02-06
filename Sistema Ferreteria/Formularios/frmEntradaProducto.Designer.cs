@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEntradaProducto));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.lblImporte = new DevExpress.XtraEditors.LabelControl();
             this.nudCantidad = new System.Windows.Forms.NumericUpDown();
             this.slueProducto = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.xpProductos = new DevExpress.Xpo.XPCollection(this.components);
@@ -54,12 +53,13 @@
             this.lciSeleccionProducto = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem5 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.txtImporte = new DevExpress.XtraEditors.TextEdit();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
@@ -79,18 +79,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.lciSeleccionProducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtImporte.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
             this.layoutControl1.Controls.Add(this.labelControl3);
-            this.layoutControl1.Controls.Add(this.lblImporte);
             this.layoutControl1.Controls.Add(this.nudCantidad);
             this.layoutControl1.Controls.Add(this.slueProducto);
             this.layoutControl1.Controls.Add(this.dtpFechaEntrada);
@@ -99,6 +99,7 @@
             this.layoutControl1.Controls.Add(this.txtPrecioCompra);
             this.layoutControl1.Controls.Add(this.btnGuardarEntrada);
             this.layoutControl1.Controls.Add(this.btnCancelarOperacion);
+            this.layoutControl1.Controls.Add(this.txtImporte);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
@@ -110,21 +111,12 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(12, 252);
+            this.labelControl3.Location = new System.Drawing.Point(12, 242);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(362, 16);
             this.labelControl3.StyleController = this.layoutControl1;
             this.labelControl3.TabIndex = 11;
             this.labelControl3.Text = "Si cancela la operación se cerrará automaticamente esté menú";
-            // 
-            // lblImporte
-            // 
-            this.lblImporte.Location = new System.Drawing.Point(12, 176);
-            this.lblImporte.Name = "lblImporte";
-            this.lblImporte.Size = new System.Drawing.Size(50, 16);
-            this.lblImporte.StyleController = this.layoutControl1;
-            this.lblImporte.TabIndex = 10;
-            this.lblImporte.Text = "Importe:";
             // 
             // nudCantidad
             // 
@@ -202,7 +194,7 @@
             // 
             this.btnGuardarEntrada.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnGuardarEntrada.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardarEntrada.ImageOptions.Image")));
-            this.btnGuardarEntrada.Location = new System.Drawing.Point(238, 196);
+            this.btnGuardarEntrada.Location = new System.Drawing.Point(238, 202);
             this.btnGuardarEntrada.Name = "btnGuardarEntrada";
             this.btnGuardarEntrada.Size = new System.Drawing.Size(88, 36);
             this.btnGuardarEntrada.StyleController = this.layoutControl1;
@@ -214,7 +206,7 @@
             // 
             this.btnCancelarOperacion.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancelarOperacion.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelarOperacion.ImageOptions.Image")));
-            this.btnCancelarOperacion.Location = new System.Drawing.Point(340, 196);
+            this.btnCancelarOperacion.Location = new System.Drawing.Point(340, 202);
             this.btnCancelarOperacion.Name = "btnCancelarOperacion";
             this.btnCancelarOperacion.Size = new System.Drawing.Size(96, 36);
             this.btnCancelarOperacion.StyleController = this.layoutControl1;
@@ -235,11 +227,11 @@
             this.lciSeleccionProducto,
             this.layoutControlItem5,
             this.layoutControlItem6,
-            this.layoutControlItem7,
             this.layoutControlItem8,
             this.layoutControlItem9,
             this.emptySpaceItem4,
             this.emptySpaceItem5,
+            this.layoutControlItem3,
             this.layoutControlItem10});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(448, 280);
@@ -248,9 +240,9 @@
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 224);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 250);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(428, 16);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(428, 10);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem2
@@ -323,15 +315,6 @@
             this.layoutControlItem6.Text = "Precio Compra:";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(134, 16);
             // 
-            // layoutControlItem7
-            // 
-            this.layoutControlItem7.Control = this.lblImporte;
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 164);
-            this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(428, 20);
-            this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem7.TextVisible = false;
-            // 
             // layoutControlItem8
             // 
             this.layoutControlItem8.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F);
@@ -339,7 +322,7 @@
             this.layoutControlItem8.Control = this.btnGuardarEntrada;
             this.layoutControlItem8.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.layoutControlItem8.CustomizationFormText = "layoutControlItem1";
-            this.layoutControlItem8.Location = new System.Drawing.Point(226, 184);
+            this.layoutControlItem8.Location = new System.Drawing.Point(226, 190);
             this.layoutControlItem8.Name = "layoutControlItem8";
             this.layoutControlItem8.Size = new System.Drawing.Size(92, 40);
             this.layoutControlItem8.Text = "layoutControlItem1";
@@ -354,7 +337,7 @@
             this.layoutControlItem9.Control = this.btnCancelarOperacion;
             this.layoutControlItem9.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.layoutControlItem9.CustomizationFormText = "layoutControlItem2";
-            this.layoutControlItem9.Location = new System.Drawing.Point(328, 184);
+            this.layoutControlItem9.Location = new System.Drawing.Point(328, 190);
             this.layoutControlItem9.Name = "layoutControlItem9";
             this.layoutControlItem9.Size = new System.Drawing.Size(100, 40);
             this.layoutControlItem9.Text = "layoutControlItem2";
@@ -368,7 +351,7 @@
             this.emptySpaceItem4.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F);
             this.emptySpaceItem4.AppearanceItemCaption.Options.UseFont = true;
             this.emptySpaceItem4.CustomizationFormText = "emptySpaceItem1";
-            this.emptySpaceItem4.Location = new System.Drawing.Point(318, 184);
+            this.emptySpaceItem4.Location = new System.Drawing.Point(318, 190);
             this.emptySpaceItem4.MaxSize = new System.Drawing.Size(10, 27);
             this.emptySpaceItem4.MinSize = new System.Drawing.Size(10, 27);
             this.emptySpaceItem4.Name = "emptySpaceItem4";
@@ -383,7 +366,7 @@
             this.emptySpaceItem5.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F);
             this.emptySpaceItem5.AppearanceItemCaption.Options.UseFont = true;
             this.emptySpaceItem5.CustomizationFormText = "emptySpaceItem2";
-            this.emptySpaceItem5.Location = new System.Drawing.Point(0, 184);
+            this.emptySpaceItem5.Location = new System.Drawing.Point(0, 190);
             this.emptySpaceItem5.Name = "emptySpaceItem5";
             this.emptySpaceItem5.Size = new System.Drawing.Size(226, 40);
             this.emptySpaceItem5.Text = "emptySpaceItem2";
@@ -392,11 +375,28 @@
             // layoutControlItem10
             // 
             this.layoutControlItem10.Control = this.labelControl3;
-            this.layoutControlItem10.Location = new System.Drawing.Point(0, 240);
+            this.layoutControlItem10.Location = new System.Drawing.Point(0, 230);
             this.layoutControlItem10.Name = "layoutControlItem10";
             this.layoutControlItem10.Size = new System.Drawing.Size(428, 20);
             this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem10.TextVisible = false;
+            // 
+            // txtImporte
+            // 
+            this.txtImporte.Location = new System.Drawing.Point(158, 176);
+            this.txtImporte.Name = "txtImporte";
+            this.txtImporte.Size = new System.Drawing.Size(278, 22);
+            this.txtImporte.StyleController = this.layoutControl1;
+            this.txtImporte.TabIndex = 12;
+            // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.txtImporte;
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 164);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(428, 26);
+            this.layoutControlItem3.Text = "Importe";
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(134, 16);
             // 
             // frmEntradaProducto
             // 
@@ -430,12 +430,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.lciSeleccionProducto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtImporte.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -456,12 +457,10 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlItem lciProducto;
         private DevExpress.XtraLayout.LayoutControlItem lciSeleccionProducto;
-        private DevExpress.XtraEditors.LabelControl lblImporte;
         private System.Windows.Forms.NumericUpDown nudCantidad;
         private DevExpress.XtraEditors.TextEdit txtPrecioCompra;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.SimpleButton btnGuardarEntrada;
         private DevExpress.XtraEditors.SimpleButton btnCancelarOperacion;
@@ -472,5 +471,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
         private DevExpress.Xpo.UnitOfWork unitOfWork;
         private DevExpress.Xpo.XPCollection xpProductos;
+        private DevExpress.XtraEditors.TextEdit txtImporte;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
     }
 }
