@@ -36,12 +36,10 @@
             this.xpEntradaProductos = new DevExpress.Xpo.XPCollection(this.components);
             this.unitOfWork = new DevExpress.Xpo.UnitOfWork(this.components);
             this.gridViewEntradaProductos = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colidEntradaProductos = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colfecha = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcantidad = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colprecioCompra = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colimporte = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnNuevaEntrada = new DevExpress.XtraEditors.SimpleButton();
             this.btnExportarExcel = new DevExpress.XtraEditors.SimpleButton();
@@ -115,78 +113,63 @@
             // gridViewEntradaProductos
             // 
             this.gridViewEntradaProductos.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colidEntradaProductos,
             this.colfecha,
             this.colcantidad,
             this.colprecioCompra,
             this.colimporte,
-            this.gridColumn1,
             this.gridColumn2});
             this.gridViewEntradaProductos.GridControl = this.gridEntradaProductos;
             this.gridViewEntradaProductos.Name = "gridViewEntradaProductos";
             this.gridViewEntradaProductos.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridViewEntradaProductos_RowClick);
             // 
-            // colidEntradaProductos
-            // 
-            this.colidEntradaProductos.FieldName = "idEntradaProductos";
-            this.colidEntradaProductos.MinWidth = 25;
-            this.colidEntradaProductos.Name = "colidEntradaProductos";
-            this.colidEntradaProductos.Visible = true;
-            this.colidEntradaProductos.VisibleIndex = 0;
-            this.colidEntradaProductos.Width = 94;
-            // 
             // colfecha
             // 
+            this.colfecha.Caption = "Fecha de Ingreso";
             this.colfecha.FieldName = "fecha";
             this.colfecha.MinWidth = 25;
             this.colfecha.Name = "colfecha";
             this.colfecha.Visible = true;
-            this.colfecha.VisibleIndex = 1;
+            this.colfecha.VisibleIndex = 0;
             this.colfecha.Width = 94;
             // 
             // colcantidad
             // 
+            this.colcantidad.Caption = "Cantidad";
             this.colcantidad.FieldName = "cantidad";
             this.colcantidad.MinWidth = 25;
             this.colcantidad.Name = "colcantidad";
             this.colcantidad.Visible = true;
-            this.colcantidad.VisibleIndex = 2;
+            this.colcantidad.VisibleIndex = 1;
             this.colcantidad.Width = 94;
             // 
             // colprecioCompra
             // 
+            this.colprecioCompra.Caption = "Precio de Adquisición";
             this.colprecioCompra.FieldName = "precioCompra";
             this.colprecioCompra.MinWidth = 25;
             this.colprecioCompra.Name = "colprecioCompra";
             this.colprecioCompra.Visible = true;
-            this.colprecioCompra.VisibleIndex = 3;
+            this.colprecioCompra.VisibleIndex = 2;
             this.colprecioCompra.Width = 94;
             // 
             // colimporte
             // 
+            this.colimporte.Caption = "Pago de Importe";
             this.colimporte.FieldName = "importe";
             this.colimporte.MinWidth = 25;
             this.colimporte.Name = "colimporte";
             this.colimporte.Visible = true;
-            this.colimporte.VisibleIndex = 4;
+            this.colimporte.VisibleIndex = 3;
             this.colimporte.Width = 94;
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.FieldName = "producto!";
-            this.gridColumn1.MinWidth = 25;
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 5;
-            this.gridColumn1.Width = 94;
             // 
             // gridColumn2
             // 
-            this.gridColumn2.FieldName = "producto!Key";
+            this.gridColumn2.Caption = "Producto";
+            this.gridColumn2.FieldName = "producto.nombre";
             this.gridColumn2.MinWidth = 25;
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 6;
+            this.gridColumn2.VisibleIndex = 4;
             this.gridColumn2.Width = 94;
             // 
             // btnNuevaEntrada
@@ -338,12 +321,10 @@
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraGrid.GridControl gridEntradaProductos;
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewEntradaProductos;
-        private DevExpress.XtraGrid.Columns.GridColumn colidEntradaProductos;
         private DevExpress.XtraGrid.Columns.GridColumn colfecha;
         private DevExpress.XtraGrid.Columns.GridColumn colcantidad;
         private DevExpress.XtraGrid.Columns.GridColumn colprecioCompra;
         private DevExpress.XtraGrid.Columns.GridColumn colimporte;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;

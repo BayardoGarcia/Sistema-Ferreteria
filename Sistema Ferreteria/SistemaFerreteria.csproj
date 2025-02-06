@@ -120,8 +120,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Encrypt.cs" />
-    <Compile Include="ExcelExport.cs" />
+    <Compile Include="Funciones\Encrypt.cs" />
+    <Compile Include="Funciones\ExcelExport.cs" />
     <Compile Include="Formularios\frmDetallesUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>

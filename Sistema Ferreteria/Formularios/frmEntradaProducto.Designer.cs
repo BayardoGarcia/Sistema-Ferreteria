@@ -189,6 +189,7 @@
             this.txtPrecioCompra.StyleController = this.layoutControl1;
             this.txtPrecioCompra.TabIndex = 9;
             this.txtPrecioCompra.EditValueChanged += new System.EventHandler(this.txtPrecioCompra_EditValueChanged);
+            this.txtPrecioCompra.TextChanged += new System.EventHandler(this.txtPrecioCompra_TextChanged);
             // 
             // btnGuardarEntrada
             // 
@@ -212,6 +213,7 @@
             this.btnCancelarOperacion.StyleController = this.layoutControl1;
             this.btnCancelarOperacion.TabIndex = 6;
             this.btnCancelarOperacion.Text = "Cancelar ";
+            this.btnCancelarOperacion.Click += new System.EventHandler(this.btnCancelarOperacion_Click);
             // 
             // txtImporte
             // 

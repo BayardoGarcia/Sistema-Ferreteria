@@ -17,8 +17,7 @@ namespace Sistema_Ferreteria.Formularios
     {
         public int IdUsuario { get; set; }
         public int IdProducto { get; set; }
-        public bool IsNuevo { get; set; }
-        public double PrecioCompra { get; set; }
+        public double Precio { get; set; }
         public double Importe { get; set; }
         public frmEntradaProducto()
         {
@@ -57,10 +56,28 @@ namespace Sistema_Ferreteria.Formularios
         private void nudCantidad_ValueChanged(object sender, EventArgs e)
         {
             double cantidad = Convert.ToDouble(nudCantidad.Value);
-            Importe = cantidad * Convert.ToDouble(txtPrecioCompra.Text);
+            Importe = cantidad * Precio;
             txtImporte.Text= Importe.ToString();
         }
+        private void txtPrecioCompra_EditValueChanged(object sender, EventArgs e)
+        {
+            double cantidad = Convert.ToDouble(nudCantidad.Value);
+            Importe = cantidad * Precio;
+            txtImporte.Text = Importe.ToString();
+        }
+        private void txtPrecioCompra_TextChanged(object sender, EventArgs e)
+        {
+            TextEdit caja = (TextEdit)sender;
+            if (string.IsNullOrEmpty(caja.Text)) return;
 
+            double precio = 0;
+            if (!double.TryParse(caja.Text, out precio)) return;
+
+            Precio = precio;
+            double cantidad = Convert.ToDouble(nudCantidad.Value);
+            Importe = cantidad * Precio;
+            txtImporte.Text = Importe.ToString();
+        }
         #endregion
         #region "Metodos de guardado"
         private void Guardar()
@@ -70,7 +87,7 @@ namespace Sistema_Ferreteria.Formularios
             entrada.producto = (Productos)unitOfWork.GetObjectByKey(typeof(Productos), IdProducto);
             entrada.cantidad = Convert.ToInt32(nudCantidad.Value);
             entrada.precioCompra = Convert.ToDouble(txtPrecioCompra.Text);
-            entrada.importe = Convert.ToDouble(txtImporte.Text);
+            entrada.importe = Importe;
             entrada.Save();
             unitOfWork.CommitChanges();
             ModificarExistencia();
@@ -102,13 +119,15 @@ namespace Sistema_Ferreteria.Formularios
             Guardar();
             this.DialogResult = DialogResult.OK;
         }
+        private void btnCancelarOperacion_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+        }
+
+
+
         #endregion
 
-        private void txtPrecioCompra_EditValueChanged(object sender, EventArgs e)
-        {
-            double cantidad = Convert.ToDouble(nudCantidad.Value);
-            Importe = cantidad * Convert.ToDouble(txtPrecioCompra.Text);
-            txtImporte.Text = Importe.ToString();
-        }
+        
     }
 }
