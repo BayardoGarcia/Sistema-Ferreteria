@@ -11,133 +11,125 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Sistema_Ferreteria.Database;
 using Microsoft.VisualBasic;
+using Sistema_Ferreteria.Funciones;
 
 
 namespace Sistema_Ferreteria.Formularios
 {
     public partial class frmVentas : DevExpress.XtraEditors.XtraForm
     {
-        public int idProducto { get; set; }
-        public int idUsuario { get; set; }
-        private double Total { get; set; }
-        public List<ProductosEnCarrito> carritoProductos;
+        public int IdProducto { get; set; }
+        public int IdUsuario { get; set; }
+        public double Total { get; set; }
+        public List<ListaProducto> listaProductos;
         public frmVentas()
         {
             InitializeComponent();
-            idUsuario = 1;  //Se asigna un valor por defecto al id del usuario
+            IdProducto = -1;
+          
         }
         private void frmVentas_Load(object sender, EventArgs e)
         {
-            carritoProductos = new List<ProductosEnCarrito>();//Inicializamos la lista de productos
-            Total = 0;//Inicializamos el monto total en 0
-            LoadGridDetalleVenta();//Cargamos el grid de productos
+            Total = 0;
+            listaProductos = new List<ListaProducto>();
+            LoadGridDetalleVenta();
         }
         private void LoadGridDetalleVenta()
         {
             gridDetalleVenta.DataSource = null;
-            gridDetalleVenta.DataSource = carritoProductos;
+            gridDetalleVenta.DataSource = listaProductos;
             gridViewDetalleVenta.Columns[0].Visible = false;
             gridViewDetalleVenta.OptionsView.ColumnAutoWidth = true;
             gridViewDetalleVenta.BestFitColumns();
         }
         private void btnAgregarProducto_Click(object sender, EventArgs e)
         {
-            Productos producto = (Productos)unitOfWork.GetObjectByKey<Productos>(idProducto);//Obtenemos el producto seleccionado
-            if (producto == null)return;//Si no se selecciono ningun producto, salimos del metodo
-            //Validamos si el producto ya fue agregado a la lista
+            Productos productos = (Productos)unitOfWork.GetObjectByKey(typeof(Productos), IdProducto);
+            if (productos == null) return;
             int cantidad;
-            string input = Interaction.InputBox("Cantidad:", producto.nombre, "1");
-            if (!int.TryParse(input, out cantidad))
+            string input = Interaction.InputBox("Ingrese la cantidad de productos", productos.nombre , "1");
+            if (int.TryParse(input, out cantidad))
             {
                 if (cantidad <= 0)
                 {
-                    XtraMessageBox.Show("La cantidad debe ser mayor a 0", "Sistema Ferreteria", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    XtraMessageBox.Show("La cantidad debe ser mayor a 0", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                if (cantidad > producto.cantidadStock)
+                if (cantidad > productos.cantidadStock)
                 {
-                    XtraMessageBox.Show("La cantidad supera el stock del producto", "Sistema Ferreteria", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    XtraMessageBox.Show("No hay suficiente cantidad de productos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                //Si el producto ya fue agregado a la lista, actualizamos la cantidad
-                ProductosEnCarrito productoEnCarrito = new ProductosEnCarrito();
-                productoEnCarrito.IdProducto = producto.idProducto;
-                productoEnCarrito.Producto = producto.nombre;
-                productoEnCarrito.Cantidad = cantidad;
-                productoEnCarrito.Precio = producto.precioUnitario;
-                carritoProductos.Add(productoEnCarrito);
-                //Habilitamos los botones de facturar y limpiar
-                if (carritoProductos.Count != 0)
+                ListaProducto listaProducto = new ListaProducto();
+                listaProducto.ProductoId = productos.idProducto;
+                listaProducto.Producto = productos.nombre;
+                listaProducto.Cantidad = cantidad;
+                listaProducto.Precio = productos.precioUnitario;
+                listaProductos.Add(listaProducto);
+                if (listaProductos.Count != 0)
                 {
                     btnFacturar.Enabled = true;
                     btnLimpiarProducto.Enabled = true;
                 }
                 LoadGridDetalleVenta();
-                Total = Total + productoEnCarrito.Subtotal;
+                Total = Total + listaProducto.Importe;
                 lblMonto.Text = "Total: " + Total.ToString();
             }
             else
             {
-                XtraMessageBox.Show("La cantidad debe ser un número entero", "Sistema Ferreteria", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                XtraMessageBox.Show("El valor no es valido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            btnAgregarProducto.Enabled = false; 
-        }
-        private void btnLimpiarProducto_Click(object sender, EventArgs e)
-        {
-            Limppiar();//Se llama al metodo limpiar
-        }
-        private void Limppiar()
-        {
-            carritoProductos.Clear();//Limpiamos la lista de productos
-            Total = 0;//Reiniciamos el monto total
-            LoadGridDetalleVenta();//Cargamos el grid de productos
-            lblMonto.Text = "Total: " + Total.ToString();//Mostramos el monto total
-            btnFacturar.Enabled = false;//Deshabilitamos el boton de facturar
-            btnLimpiarProducto.Enabled = false;//Deshabilitamos el boton de limpiar
+            btnAgregarProducto.Enabled = false;
         }
         private void btnEliminarProducto_Click(object sender, EventArgs e)
         {
-            ProductosEnCarrito carrito = (ProductosEnCarrito)gridViewDetalleVenta.GetFocusedRow();//Obtenemos el producto seleccionado
-            if (carrito != null)
+            ListaProducto listaP = (ListaProducto)gridViewDetalleVenta.GetFocusedRow();
+            if (listaP != null)
             {
-                carritoProductos.Remove(carrito);//Eliminamos el producto de la lista
-                LoadGridDetalleVenta();//Cargamos el grid de productos
-                Total = Total - carrito.Subtotal;//Restamos el subtotal del producto eliminado al monto total
-                lblMonto.Text = "Total: " + Total.ToString();//Mostramos el monto total
-                if (carritoProductos.Count == 0)
+                listaProductos.Remove(listaP);
+                LoadGridDetalleVenta();
+                Total = Total - listaP.Importe;
+                lblMonto.Text = "Total: " + Total.ToString();
+                if (listaProductos.Count == 0)
                 {
-                    btnFacturar.Enabled = false;//Deshabilitamos el boton de facturar
-                    btnLimpiarProducto.Enabled = false;//Deshabilitamos el boton de limpiar
+                    btnFacturar.Enabled = false;
+                    btnLimpiarProducto.Enabled = false;
                 }
             }
-            if (carrito == null) return;//Si no se selecciono ningun producto, salimos del metodo
         }
         private void btnFacturar_Click(object sender, EventArgs e)
         {
-            frmFacturar frm = new frmFacturar();//Instanciamos el formulario de facturar
-            frm.idUsuario = idUsuario;//Asignamos el id del usuario al formulario de facturar
-            frm.Total = Total;//Asignamos el monto total al formulario de facturar
-            foreach (ProductosEnCarrito item in carritoProductos)
-                frm.carritoProductos.Add(item);//Agregamos los productos al formulario de facturar
-            //Mostramos el formulario de facturar
+            frmFacturar frm = new frmFacturar();
+            frm.IdUsuario = IdUsuario;
+            frm.Total = Total;
+            foreach(ListaProducto p in listaProductos)
+                frm.listaProductos.Add(p);
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                Limppiar();//Llamamos al metodo limpiar
-                btnAgregarProducto.Enabled = false;
+                Limpiar();
                 btnFacturar.Enabled = false;
                 btnLimpiarProducto.Enabled = false;
+                btnAgregarProducto.Enabled = false;
             }
-            xpProductos.Reload();//Recargamos los productos
+            xpProductos.Reload();
         }
+        private void Limpiar()
+        {
+            lblMonto.Text = "Total: " + (Total=0).ToString();
+            listaProductos.Clear();
+            LoadGridDetalleVenta();
+        }
+        private void btnLimpiarProducto_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+        }
+
         private void gridViewProducto_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
-            Productos producto = (Productos)gridViewProducto.GetFocusedRow();//Obtenemos el producto seleccionado
-            if (producto != null)
-            {
-                idProducto = producto.idProducto;//Asignamos el id del producto seleccionado
-                btnAgregarProducto.Enabled = true;//Habilitamos el boton de agregar producto
-            }
-            if (producto == null) return;//Si no se selecciono ningun producto, salimos del metodo
-        }   
+            Productos producto = (Productos)gridViewProducto.GetFocusedRow();
+            if (producto == null) return;   
+            IdProducto = producto.idProducto;
+            btnAgregarProducto.Enabled = true;
+        }
     }
 }

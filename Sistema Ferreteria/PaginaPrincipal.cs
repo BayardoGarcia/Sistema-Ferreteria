@@ -16,7 +16,7 @@ namespace Sistema_Ferreteria
 {
     public partial class PaginaPrincipal : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        internal static int idUsuario;//Variable para almacenar el id del usuario que inicio sesion
+        internal static int IdUsuario;//Variable para almacenar el id del usuario que inicio sesion
         public PaginaPrincipal()
         {
             InitializeComponent();
@@ -25,7 +25,7 @@ namespace Sistema_Ferreteria
         {
             this.Text = "Sistema Ferreteria - " + DateTime.Now.ToShortDateString();//Titulo de la ventana
             BlockSubMenu();//Bloquea los submenus
-            idUsuario = 0;
+            IdUsuario = 0;
         }
         private void btnLogin_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -33,9 +33,9 @@ namespace Sistema_Ferreteria
             DialogResult result = frm.ShowDialog(); //Se muestra el formulario de login
             if (result == DialogResult.OK) //Si el resultado del formulario de login es OK
             {
-                if (idUsuario != 0)
+                if (IdUsuario != 0)
                 {
-                    Usuarios usuario = (Usuarios)unitOfWork.GetObjectByKey<Usuarios>(idUsuario);
+                    Usuarios usuario = (Usuarios)unitOfWork.GetObjectByKey<Usuarios>(IdUsuario);
                     slblUsuario.Caption = "Usuario: " + usuario.nombre +" " +usuario.apellido;//Muestra el nombre del usuario en el status bar
                     btnLogout.Enabled = true; //Activa el boton para cerrar sesion
                     btnLogin.Enabled = false; //Desactiva el boton para iniciar sesion
@@ -51,7 +51,7 @@ namespace Sistema_Ferreteria
         private void btnLogout_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             //Valida si hay una sesion iniciada
-            if (idUsuario == 0)
+            if (IdUsuario == 0)
             {   XtraMessageBox.Show("No hay una sesión iniciada", "Sistema Ferreteria", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
@@ -61,7 +61,7 @@ namespace Sistema_Ferreteria
             //Recorre la colleccion de formularios abiertos
             foreach (Form feach in this.MdiChildren) 
                 feach.Close(); //Cierra el formulario abierto
-            idUsuario = 0; //No hay usuario con sesion iniciada
+            IdUsuario = 0; //No hay usuario con sesion iniciada
             slblUsuario.Caption = "Usuario: ";//Limpia el nombre del usuario en el status bar
             btnLogout.Enabled = false; //desactiva el boton para cerrar sesion
             btnLogin.Enabled = true; //activa el boton para iniciar sesion
@@ -86,7 +86,7 @@ namespace Sistema_Ferreteria
         private void btnVentas_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmVentas frm = new frmVentas();
-            frm.idUsuario = idUsuario;//Se envia el id del usuario que inicio sesion
+            frm.IdUsuario = IdUsuario;//Se envia el id del usuario que inicio sesion
             frm.MdiParent = this;
             frm.Show();
         }

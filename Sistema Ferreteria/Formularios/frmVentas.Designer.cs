@@ -119,6 +119,7 @@
             this.gridDetalleVenta.TabIndex = 6;
             this.gridDetalleVenta.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewDetalleVenta});
+            this.gridDetalleVenta.ContextMenuStrip = this.contextMenuStripDetalleVenta;
             // 
             // gridViewDetalleVenta
             // 
@@ -159,6 +160,7 @@
             this.gridViewProducto.DetailHeight = 233;
             this.gridViewProducto.GridControl = this.gridProducto;
             this.gridViewProducto.Name = "gridViewProducto";
+            this.gridViewProducto.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridViewProducto_RowClick);
             // 
             // colidProducto
             // 
@@ -394,7 +396,7 @@
             // btnEliminarProducto
             // 
             this.btnEliminarProducto.Name = "btnEliminarProducto";
-            this.btnEliminarProducto.Size = new System.Drawing.Size(210, 24);
+            this.btnEliminarProducto.Size = new System.Drawing.Size(196, 24);
             this.btnEliminarProducto.Text = "Eliminar Producto";
             this.btnEliminarProducto.Click += new System.EventHandler(this.btnEliminarProducto_Click);
             // 

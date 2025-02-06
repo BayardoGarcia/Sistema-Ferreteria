@@ -33,8 +33,9 @@
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.cboCliente = new System.Windows.Forms.ComboBox();
+            this.xpClientes = new DevExpress.Xpo.XPCollection(this.components);
             this.unitOfWork = new DevExpress.Xpo.UnitOfWork(this.components);
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.lblTotal = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btnAceptar = new DevExpress.XtraEditors.SimpleButton();
             this.btnCancelar = new DevExpress.XtraEditors.SimpleButton();
@@ -53,10 +54,10 @@
             this.emptySpaceItem6 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem7 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem8 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.xpClientes = new DevExpress.Xpo.XPCollection(this.components);
             this.xpProductos = new DevExpress.Xpo.XPCollection(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.xpClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.unitOfWork)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
@@ -73,7 +74,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xpClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xpProductos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,7 +81,7 @@
             // 
             this.layoutControl1.Controls.Add(this.dtpFecha);
             this.layoutControl1.Controls.Add(this.cboCliente);
-            this.layoutControl1.Controls.Add(this.labelControl2);
+            this.layoutControl1.Controls.Add(this.lblTotal);
             this.layoutControl1.Controls.Add(this.labelControl1);
             this.layoutControl1.Controls.Add(this.btnAceptar);
             this.layoutControl1.Controls.Add(this.btnCancelar);
@@ -112,18 +112,23 @@
             this.cboCliente.TabIndex = 6;
             this.cboCliente.ValueMember = "idCliente";
             // 
-            // labelControl2
+            // xpClientes
             // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl2.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Appearance.Options.UseForeColor = true;
-            this.labelControl2.Location = new System.Drawing.Point(301, 38);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(114, 21);
-            this.labelControl2.StyleController = this.layoutControl1;
-            this.labelControl2.TabIndex = 5;
-            this.labelControl2.Text = "Monto Total: ";
+            this.xpClientes.ObjectType = typeof(Sistema_Ferreteria.Database.Clientes);
+            this.xpClientes.Session = this.unitOfWork;
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.lblTotal.Appearance.Options.UseFont = true;
+            this.lblTotal.Appearance.Options.UseForeColor = true;
+            this.lblTotal.Location = new System.Drawing.Point(301, 38);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(114, 21);
+            this.lblTotal.StyleController = this.layoutControl1;
+            this.lblTotal.TabIndex = 5;
+            this.lblTotal.Text = "Monto Total: ";
             // 
             // labelControl1
             // 
@@ -219,7 +224,7 @@
             // 
             // lblMontoTotal
             // 
-            this.lblMontoTotal.Control = this.labelControl2;
+            this.lblMontoTotal.Control = this.lblTotal;
             this.lblMontoTotal.Location = new System.Drawing.Point(289, 26);
             this.lblMontoTotal.Name = "lblMontoTotal";
             this.lblMontoTotal.Size = new System.Drawing.Size(118, 25);
@@ -331,11 +336,6 @@
             this.emptySpaceItem8.Size = new System.Drawing.Size(407, 10);
             this.emptySpaceItem8.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // xpClientes
-            // 
-            this.xpClientes.ObjectType = typeof(Sistema_Ferreteria.Database.Clientes);
-            this.xpClientes.Session = this.unitOfWork;
-            // 
             // xpProductos
             // 
             this.xpProductos.ObjectType = typeof(Sistema_Ferreteria.Database.Productos);
@@ -356,7 +356,7 @@
             this.Load += new System.EventHandler(this.frmFacturar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            this.layoutControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.xpClientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.unitOfWork)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
@@ -373,7 +373,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xpClientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xpProductos)).EndInit();
             this.ResumeLayout(false);
 
@@ -388,7 +387,7 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
         private DevExpress.XtraLayout.LayoutControlItem lblTitulo;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.LabelControl lblTotal;
         private DevExpress.XtraLayout.LayoutControlItem lblMontoTotal;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem4;
         private System.Windows.Forms.DateTimePicker dtpFecha;

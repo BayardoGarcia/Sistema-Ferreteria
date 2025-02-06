@@ -135,7 +135,6 @@ namespace Sistema_Ferreteria.Formularios
             usuarios.nombre = txtNombre.Text.Trim();
             usuarios.apellido = txtApellido.Text.Trim();
             usuarios.usuario = txtUsuario.Text.Trim();
-            usuarios.password = Encrypt.GetMD5String(txtPassword.Text.Trim());
             usuarios.cedula = txtCedula.Text.Trim();
             usuarios.telefono = txtTelefono.Text.Trim();
             usuarios.email = txtEmail.Text.Trim();

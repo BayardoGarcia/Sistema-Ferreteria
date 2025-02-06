@@ -194,6 +194,7 @@
     <Compile Include="Formularios\frmVentas.Designer.cs">
       <DependentUpon>frmVentas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Funciones\ListaProductos.cs" />
     <Compile Include="PaginaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -237,7 +238,6 @@
     <Compile Include="ORMDataModelCode\Ventas.Designer.cs">
       <DependentUpon>Ventas.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProductosEnCarrito.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Formularios\frmDetallesUsuarios.resx">

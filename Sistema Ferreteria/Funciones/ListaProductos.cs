@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sistema_Ferreteria
+namespace Sistema_Ferreteria.Funciones
 {
-    public class ProductosEnCarrito
+    public class ListaProducto
     {
-        public int IdProducto { get; set; }
+        public int ProductoId { get; set; }
         public string Producto { get; set; }
         public int Cantidad { get; set; }
         public double Precio { get; set; }
-        public double Subtotal { get { return Cantidad * Precio; } }
+        public double Importe { get { return Cantidad * Precio; } }
     }
 }

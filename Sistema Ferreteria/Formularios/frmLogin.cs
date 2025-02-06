@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Sistema_Ferreteria.Funciones;
 
 namespace Sistema_Ferreteria.Formularios
 {
@@ -21,6 +22,20 @@ namespace Sistema_Ferreteria.Formularios
         {
             InitializeComponent();
         }
+        #region "Metodos simples"
+        private void chkShow_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkShow.Checked)
+            {
+                txtPassword.Properties.PasswordChar = '\0';
+            }
+            else
+            {
+                txtPassword.Properties.PasswordChar = '*';
+            }
+        }
+        #endregion
+        #region "Eventos de botones"
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtUsuario.Text) && string.IsNullOrEmpty(txtPassword.Text))
@@ -43,16 +58,13 @@ namespace Sistema_Ferreteria.Formularios
                 txtPassword.Focus();
                 return;
             }
-
             string usuario = txtUsuario.Text.Trim();
             string password = Encrypt.GetMD5String(txtPassword.Text.Trim());
-
             unit = new UnitOfWork();
             xpusuario = new XPCollection(unit, typeof(Usuarios));
             //Criterios de busqueda
             string criterio = "[usuario]='" + usuario + "' and [password]='" + password + "'"; 
             xpusuario.CriteriaString = criterio;
-
             if (xpusuario.Count == 0)
             { //Si no  hay resultados
                 XtraMessageBox.Show("Error... Credenciales no validas");
@@ -61,26 +73,14 @@ namespace Sistema_Ferreteria.Formularios
             else
             { //Encuentra al usuario y obtiene su id
                 Usuarios user = (Usuarios)xpusuario[0];
-                PaginaPrincipal.idUsuario = user.idUsuario;
+                PaginaPrincipal.IdUsuario = user.idUsuario;
                 this.DialogResult = DialogResult.OK;
-            }
-
-        }
-        private void chkShow_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chkShow.Checked)
-            {
-                txtPassword.Properties.PasswordChar = '\0';
-            }
-            else
-            {
-                txtPassword.Properties.PasswordChar = '*';
             }
         }
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
         }
-
+        #endregion
     }
 }
