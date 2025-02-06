@@ -26,7 +26,6 @@ namespace Sistema_Ferreteria.Formularios
         {
             InitializeComponent();
             IdProducto = -1;
-          
         }
         private void frmVentas_Load(object sender, EventArgs e)
         {
@@ -34,6 +33,7 @@ namespace Sistema_Ferreteria.Formularios
             listaProductos = new List<ListaProducto>();
             LoadGridDetalleVenta();
         }
+        #region "Metodos"
         private void LoadGridDetalleVenta()
         {
             gridDetalleVenta.DataSource = null;
@@ -42,6 +42,21 @@ namespace Sistema_Ferreteria.Formularios
             gridViewDetalleVenta.OptionsView.ColumnAutoWidth = true;
             gridViewDetalleVenta.BestFitColumns();
         }
+        private void Limpiar()
+        {
+            lblMonto.Text = "Total: " + (Total = 0).ToString();
+            listaProductos.Clear();
+            LoadGridDetalleVenta();
+        }
+        private void gridViewProducto_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        {
+            Productos producto = (Productos)gridViewProducto.GetFocusedRow();
+            if (producto == null) return;
+            IdProducto = producto.idProducto;
+            btnAgregarProducto.Enabled = true;
+        }
+        #endregion
+        #region "Eventos de botones"
         private void btnAgregarProducto_Click(object sender, EventArgs e)
         {
             Productos productos = (Productos)unitOfWork.GetObjectByKey(typeof(Productos), IdProducto);
@@ -97,6 +112,10 @@ namespace Sistema_Ferreteria.Formularios
                 }
             }
         }
+        private void btnLimpiarProducto_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+        }
         private void btnFacturar_Click(object sender, EventArgs e)
         {
             frmFacturar frm = new frmFacturar();
@@ -113,23 +132,6 @@ namespace Sistema_Ferreteria.Formularios
             }
             xpProductos.Reload();
         }
-        private void Limpiar()
-        {
-            lblMonto.Text = "Total: " + (Total=0).ToString();
-            listaProductos.Clear();
-            LoadGridDetalleVenta();
-        }
-        private void btnLimpiarProducto_Click(object sender, EventArgs e)
-        {
-            Limpiar();
-        }
-
-        private void gridViewProducto_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
-        {
-            Productos producto = (Productos)gridViewProducto.GetFocusedRow();
-            if (producto == null) return;   
-            IdProducto = producto.idProducto;
-            btnAgregarProducto.Enabled = true;
-        }
+        #endregion
     }
 }

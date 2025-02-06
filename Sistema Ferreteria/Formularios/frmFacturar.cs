@@ -30,6 +30,27 @@ namespace Sistema_Ferreteria.Formularios
             cboCliente.SelectedIndex = IdCliente;
             lblTotal.Text = "Monto Total: "+Total.ToString();
         }
+        #region "Metodos simples"
+        private void cboCliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboCliente.SelectedIndex != -1) return;
+            IdCliente = (int)cboCliente.SelectedValue;
+        }
+        #endregion
+        #region"Metodos de guardado"
+        private void ActualizarStock()
+        {
+            foreach (ListaProducto p in listaProductos)
+            {
+                Productos producto = (Productos)unitOfWork.GetObjectByKey(typeof(Productos), p.ProductoId);//Probar
+                producto.cantidadStock -= p.Cantidad; //Actualizar stock
+                producto.Save();
+                unitOfWork.CommitChanges();
+            }
+            xpProductos.Reload();
+        }
+        #endregion
+        #region "Eventos de botones"
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             IdCliente = (int)cboCliente.SelectedValue;
@@ -61,25 +82,10 @@ namespace Sistema_Ferreteria.Formularios
             ActualizarStock();
             XtraMessageBox.Show("Venta realizada con éxito", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-        private void ActualizarStock()
-        {
-            foreach (ListaProducto p in listaProductos)
-            {
-                Productos producto = (Productos)unitOfWork.GetObjectByKey(typeof(Productos), p.ProductoId);//Probar
-                producto.cantidadStock -= p.Cantidad; //Actualizar stock
-                producto.Save();
-                unitOfWork.CommitChanges();
-            }
-            xpProductos.Reload();
-        }
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
         }
-        private void cboCliente_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cboCliente.SelectedIndex != -1)return;
-            IdCliente = (int)cboCliente.SelectedValue;
-        }
+        #endregion
     }
 }

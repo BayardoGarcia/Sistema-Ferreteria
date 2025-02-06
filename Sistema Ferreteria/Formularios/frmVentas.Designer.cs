@@ -35,17 +35,15 @@
             this.lblMonto = new DevExpress.XtraEditors.LabelControl();
             this.gridDetalleVenta = new DevExpress.XtraGrid.GridControl();
             this.gridViewDetalleVenta = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.contextMenuStripDetalleVenta = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.btnEliminarProducto = new System.Windows.Forms.ToolStripMenuItem();
             this.gridProducto = new DevExpress.XtraGrid.GridControl();
             this.xpProductos = new DevExpress.Xpo.XPCollection(this.components);
             this.gridViewProducto = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colidProducto = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colnombre = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.coldescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colprecioUnitario = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcantidadStock = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnAgregarProducto = new DevExpress.XtraEditors.SimpleButton();
             this.btnLimpiarProducto = new DevExpress.XtraEditors.SimpleButton();
@@ -58,13 +56,12 @@
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.contextMenuStripDetalleVenta = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.btnEliminarProducto = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.unitOfWork)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridDetalleVenta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewDetalleVenta)).BeginInit();
+            this.contextMenuStripDetalleVenta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridProducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xpProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewProducto)).BeginInit();
@@ -76,7 +73,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
-            this.contextMenuStripDetalleVenta.SuspendLayout();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -110,6 +106,7 @@
             // 
             // gridDetalleVenta
             // 
+            this.gridDetalleVenta.ContextMenuStrip = this.contextMenuStripDetalleVenta;
             this.gridDetalleVenta.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
             this.gridDetalleVenta.Location = new System.Drawing.Point(12, 347);
             this.gridDetalleVenta.MainView = this.gridViewDetalleVenta;
@@ -119,13 +116,27 @@
             this.gridDetalleVenta.TabIndex = 6;
             this.gridDetalleVenta.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewDetalleVenta});
-            this.gridDetalleVenta.ContextMenuStrip = this.contextMenuStripDetalleVenta;
             // 
             // gridViewDetalleVenta
             // 
             this.gridViewDetalleVenta.DetailHeight = 233;
             this.gridViewDetalleVenta.GridControl = this.gridDetalleVenta;
             this.gridViewDetalleVenta.Name = "gridViewDetalleVenta";
+            // 
+            // contextMenuStripDetalleVenta
+            // 
+            this.contextMenuStripDetalleVenta.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStripDetalleVenta.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnEliminarProducto});
+            this.contextMenuStripDetalleVenta.Name = "contextMenuStripDetalleVenta";
+            this.contextMenuStripDetalleVenta.Size = new System.Drawing.Size(197, 28);
+            // 
+            // btnEliminarProducto
+            // 
+            this.btnEliminarProducto.Name = "btnEliminarProducto";
+            this.btnEliminarProducto.Size = new System.Drawing.Size(196, 24);
+            this.btnEliminarProducto.Text = "Eliminar Producto";
+            this.btnEliminarProducto.Click += new System.EventHandler(this.btnEliminarProducto_Click);
             // 
             // gridProducto
             // 
@@ -148,26 +159,15 @@
             // gridViewProducto
             // 
             this.gridViewProducto.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colidProducto,
             this.colnombre,
-            this.coldescripcion,
-            this.gridColumn1,
             this.gridColumn2,
             this.colprecioUnitario,
             this.colcantidadStock,
-            this.gridColumn3,
             this.gridColumn4});
             this.gridViewProducto.DetailHeight = 233;
             this.gridViewProducto.GridControl = this.gridProducto;
             this.gridViewProducto.Name = "gridViewProducto";
             this.gridViewProducto.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridViewProducto_RowClick);
-            // 
-            // colidProducto
-            // 
-            this.colidProducto.FieldName = "idProducto";
-            this.colidProducto.MinWidth = 16;
-            this.colidProducto.Name = "colidProducto";
-            this.colidProducto.Width = 60;
             // 
             // colnombre
             // 
@@ -179,32 +179,14 @@
             this.colnombre.VisibleIndex = 0;
             this.colnombre.Width = 60;
             // 
-            // coldescripcion
-            // 
-            this.coldescripcion.Caption = "Descripción";
-            this.coldescripcion.FieldName = "descripcion";
-            this.coldescripcion.MinWidth = 16;
-            this.coldescripcion.Name = "coldescripcion";
-            this.coldescripcion.Visible = true;
-            this.coldescripcion.VisibleIndex = 1;
-            this.coldescripcion.Width = 60;
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.FieldName = "categoria!";
-            this.gridColumn1.MinWidth = 16;
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 2;
-            this.gridColumn1.Width = 60;
-            // 
             // gridColumn2
             // 
-            this.gridColumn2.FieldName = "categoria!Key";
+            this.gridColumn2.Caption = "Categoria";
+            this.gridColumn2.FieldName = "categoria.nombre";
             this.gridColumn2.MinWidth = 16;
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 3;
+            this.gridColumn2.VisibleIndex = 1;
             this.gridColumn2.Width = 60;
             // 
             // colprecioUnitario
@@ -214,7 +196,7 @@
             this.colprecioUnitario.MinWidth = 16;
             this.colprecioUnitario.Name = "colprecioUnitario";
             this.colprecioUnitario.Visible = true;
-            this.colprecioUnitario.VisibleIndex = 4;
+            this.colprecioUnitario.VisibleIndex = 2;
             this.colprecioUnitario.Width = 60;
             // 
             // colcantidadStock
@@ -224,25 +206,17 @@
             this.colcantidadStock.MinWidth = 16;
             this.colcantidadStock.Name = "colcantidadStock";
             this.colcantidadStock.Visible = true;
-            this.colcantidadStock.VisibleIndex = 5;
+            this.colcantidadStock.VisibleIndex = 3;
             this.colcantidadStock.Width = 60;
-            // 
-            // gridColumn3
-            // 
-            this.gridColumn3.FieldName = "proveedor!";
-            this.gridColumn3.MinWidth = 16;
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 6;
-            this.gridColumn3.Width = 60;
             // 
             // gridColumn4
             // 
-            this.gridColumn4.FieldName = "proveedor!Key";
+            this.gridColumn4.Caption = "Proveedor";
+            this.gridColumn4.FieldName = "proveedor.nombre";
             this.gridColumn4.MinWidth = 16;
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 7;
+            this.gridColumn4.VisibleIndex = 4;
             this.gridColumn4.Width = 60;
             // 
             // btnAgregarProducto
@@ -385,21 +359,6 @@
             this.emptySpaceItem2.Size = new System.Drawing.Size(938, 10);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // contextMenuStripDetalleVenta
-            // 
-            this.contextMenuStripDetalleVenta.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStripDetalleVenta.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnEliminarProducto});
-            this.contextMenuStripDetalleVenta.Name = "contextMenuStripDetalleVenta";
-            this.contextMenuStripDetalleVenta.Size = new System.Drawing.Size(197, 28);
-            // 
-            // btnEliminarProducto
-            // 
-            this.btnEliminarProducto.Name = "btnEliminarProducto";
-            this.btnEliminarProducto.Size = new System.Drawing.Size(196, 24);
-            this.btnEliminarProducto.Text = "Eliminar Producto";
-            this.btnEliminarProducto.Click += new System.EventHandler(this.btnEliminarProducto_Click);
-            // 
             // frmVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -414,6 +373,7 @@
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridDetalleVenta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewDetalleVenta)).EndInit();
+            this.contextMenuStripDetalleVenta.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridProducto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xpProductos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewProducto)).EndInit();
@@ -425,7 +385,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
-            this.contextMenuStripDetalleVenta.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -437,14 +396,10 @@
         private DevExpress.XtraLayout.LayoutControlGroup Root;
         private DevExpress.XtraGrid.GridControl gridProducto;
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewProducto;
-        private DevExpress.XtraGrid.Columns.GridColumn colidProducto;
         private DevExpress.XtraGrid.Columns.GridColumn colnombre;
-        private DevExpress.XtraGrid.Columns.GridColumn coldescripcion;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn colprecioUnitario;
         private DevExpress.XtraGrid.Columns.GridColumn colcantidadStock;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraEditors.SimpleButton btnAgregarProducto;
