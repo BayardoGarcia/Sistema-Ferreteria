@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using Sistema_Ferreteria.Database;
 using DevExpress.Xpo.DB.Exceptions;
 using Microsoft.VisualBasic;
+using DevExpress.Xpo;
 
 namespace Sistema_Ferreteria.Formularios
 {
@@ -35,7 +36,7 @@ namespace Sistema_Ferreteria.Formularios
         }
         private void btnEditarProducto_Click(object sender, EventArgs e)
         {
-            Productos producto = (Productos)unitOfWork.GetObjectByKey(typeof(Productos), IdProducto);
+            Productos producto = (Productos)gridViewProductos.GetFocusedRow();
             if(producto == null) return;
             //Editar producto en formulario
             frmProducto frm = new frmProducto();
@@ -67,18 +68,33 @@ namespace Sistema_Ferreteria.Formularios
                 xpProductos.Reload();
             }
         }
-        private void btnModificarStock_Click(object sender, EventArgs e)
+        private void btnExportarExcel_Click(object sender, EventArgs e)
         {
-            Productos producto = (Productos)unitOfWork.GetObjectByKey(typeof(Productos), IdProducto);
-            int stock;
+            ExcelExport excelExport = new ExcelExport();
+            excelExport.PrintGridView("Listado de productos", DateTime.Today.ToShortDateString(), gridViewProductos);
+        }
+        #endregion
+        #region "Eventos del grid"
+        private void gridViewProductos_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        {
+            Productos productos = (Productos)gridViewProductos.GetFocusedRow();
+            if (productos == null) return;
+            IdProducto = productos.idProducto;
+        }
+        #endregion
+
+        private void btnEditarStock_Click(object sender, EventArgs e)
+        {
+        Productos producto = (Productos)gridViewProductos.GetFocusedRow();
+        int stock;
             //Modificar stock
             if (producto != null)
             {
-                string input = Interaction.InputBox("Ingrese la cantidad de stock", "Sistema Ferreteria", producto.nombre);
+                string input = Interaction.InputBox("Ingrese la cantidad de stock", producto.nombre, "1");
                 if (string.IsNullOrEmpty(input)) return;
                 if (int.TryParse(input, out stock))
                 {
-                    if(stock < 0)
+                    if (stock < 0)
                     {
                         XtraMessageBox.Show("El stock no puede ser negativo", "Sistema Ferreteria", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
@@ -93,19 +109,5 @@ namespace Sistema_Ferreteria.Formularios
                 }
             }
         }
-        private void btnExportarExcel_Click(object sender, EventArgs e)
-        {
-            ExcelExport excelExport = new ExcelExport();
-            excelExport.PrintGridView("Listado de productos", DateTime.Today.ToShortTimeString(), gridViewProductos);
-        }
-        #endregion
-        #region "Eventos del grid"
-        private void gridViewProductos_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
-        {
-            Productos productos = (Productos)gridViewProductos.GetFocusedRow();
-            if (productos == null) return;
-            IdProducto = productos.idProducto;
-        }
-        #endregion
     }
 }

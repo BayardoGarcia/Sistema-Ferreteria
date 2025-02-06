@@ -159,7 +159,6 @@
             this.nudStock.Name = "nudStock";
             this.nudStock.Size = new System.Drawing.Size(317, 23);
             this.nudStock.TabIndex = 7;
-            this.nudStock.Validating += new System.ComponentModel.CancelEventHandler(this.nudStock_Validating);
             // 
             // labelControl1
             // 

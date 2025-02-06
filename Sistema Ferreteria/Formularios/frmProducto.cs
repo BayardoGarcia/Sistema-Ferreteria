@@ -32,21 +32,6 @@ namespace Sistema_Ferreteria.Formularios
             }
         }
         #region "Metodos de validacion"
-        private void nudStock_Validating(object sender, CancelEventArgs e)
-        {
-            TextEdit txt = (TextEdit)sender;
-            int stock;
-            try
-            {
-                stock = int.Parse(txt.Text);
-            }
-            catch (Exception)
-            {
-                txt.SelectAll();
-                XtraMessageBox.Show("El campo stock debe ser un valor numerico", "Sistema Ferreteria", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                e.Cancel = true;
-            }
-        }
         private void txtPrecio_Validating(object sender, CancelEventArgs e)
         {
             TextEdit txt = (TextEdit)sender;
@@ -121,6 +106,7 @@ namespace Sistema_Ferreteria.Formularios
             producto.categoria = categoria;
             producto.Save();
             unitOfWork.CommitChanges();
+            xpProductos.Reload();
         }
         #endregion
         #region "Eventos de botones"

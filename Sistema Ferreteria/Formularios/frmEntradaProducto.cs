@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using DevExpress.XtraLayout.Utils;
 using Sistema_Ferreteria.Database;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,7 @@ namespace Sistema_Ferreteria.Formularios
         {
             InitializeComponent();
             IdProducto = -1;
+     
         }
         private void frmEntradaProducto_Load(object sender, EventArgs e)
         {
@@ -55,20 +57,10 @@ namespace Sistema_Ferreteria.Formularios
         private void nudCantidad_ValueChanged(object sender, EventArgs e)
         {
             double cantidad = Convert.ToDouble(nudCantidad.Value);
-            Importe = cantidad * PrecioCompra;
+            Importe = cantidad * Convert.ToDouble(txtPrecioCompra.Text);
             txtImporte.Text= Importe.ToString();
         }
-        private void txtPrecioCompra_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
-            {
-                e.Handled = true;
-            }
-            if (e.KeyChar == '.' && (sender as TextEdit).Text.IndexOf('.') > -1)
-            {
-                e.Handled = true;
-            }
-        }
+
         #endregion
         #region "Metodos de guardado"
         private void Guardar()
@@ -111,5 +103,12 @@ namespace Sistema_Ferreteria.Formularios
             this.DialogResult = DialogResult.OK;
         }
         #endregion
+
+        private void txtPrecioCompra_EditValueChanged(object sender, EventArgs e)
+        {
+            double cantidad = Convert.ToDouble(nudCantidad.Value);
+            Importe = cantidad * Convert.ToDouble(txtPrecioCompra.Text);
+            txtImporte.Text = Importe.ToString();
+        }
     }
 }

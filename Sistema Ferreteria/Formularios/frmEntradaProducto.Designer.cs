@@ -43,6 +43,7 @@
             this.txtPrecioCompra = new DevExpress.XtraEditors.TextEdit();
             this.btnGuardarEntrada = new DevExpress.XtraEditors.SimpleButton();
             this.btnCancelarOperacion = new DevExpress.XtraEditors.SimpleButton();
+            this.txtImporte = new DevExpress.XtraEditors.TextEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
@@ -57,9 +58,8 @@
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem5 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtImporte = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
@@ -69,6 +69,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.slueViewProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtProducto.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPrecioCompra.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtImporte.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
@@ -83,9 +84,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtImporte.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -188,7 +188,7 @@
             this.txtPrecioCompra.Size = new System.Drawing.Size(278, 22);
             this.txtPrecioCompra.StyleController = this.layoutControl1;
             this.txtPrecioCompra.TabIndex = 9;
-            this.txtPrecioCompra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecioCompra_KeyPress);
+            this.txtPrecioCompra.EditValueChanged += new System.EventHandler(this.txtPrecioCompra_EditValueChanged);
             // 
             // btnGuardarEntrada
             // 
@@ -212,6 +212,15 @@
             this.btnCancelarOperacion.StyleController = this.layoutControl1;
             this.btnCancelarOperacion.TabIndex = 6;
             this.btnCancelarOperacion.Text = "Cancelar ";
+            // 
+            // txtImporte
+            // 
+            this.txtImporte.Location = new System.Drawing.Point(158, 176);
+            this.txtImporte.Name = "txtImporte";
+            this.txtImporte.Properties.ReadOnly = true;
+            this.txtImporte.Size = new System.Drawing.Size(278, 22);
+            this.txtImporte.StyleController = this.layoutControl1;
+            this.txtImporte.TabIndex = 12;
             // 
             // Root
             // 
@@ -372,23 +381,6 @@
             this.emptySpaceItem5.Text = "emptySpaceItem2";
             this.emptySpaceItem5.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // layoutControlItem10
-            // 
-            this.layoutControlItem10.Control = this.labelControl3;
-            this.layoutControlItem10.Location = new System.Drawing.Point(0, 230);
-            this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(428, 20);
-            this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem10.TextVisible = false;
-            // 
-            // txtImporte
-            // 
-            this.txtImporte.Location = new System.Drawing.Point(158, 176);
-            this.txtImporte.Name = "txtImporte";
-            this.txtImporte.Size = new System.Drawing.Size(278, 22);
-            this.txtImporte.StyleController = this.layoutControl1;
-            this.txtImporte.TabIndex = 12;
-            // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.txtImporte;
@@ -397,6 +389,15 @@
             this.layoutControlItem3.Size = new System.Drawing.Size(428, 26);
             this.layoutControlItem3.Text = "Importe";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(134, 16);
+            // 
+            // layoutControlItem10
+            // 
+            this.layoutControlItem10.Control = this.labelControl3;
+            this.layoutControlItem10.Location = new System.Drawing.Point(0, 230);
+            this.layoutControlItem10.Name = "layoutControlItem10";
+            this.layoutControlItem10.Size = new System.Drawing.Size(428, 20);
+            this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem10.TextVisible = false;
             // 
             // frmEntradaProducto
             // 
@@ -420,6 +421,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.slueViewProductos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtProducto.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPrecioCompra.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtImporte.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
@@ -434,9 +436,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtImporte.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             this.ResumeLayout(false);
 
         }
