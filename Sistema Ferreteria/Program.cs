@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using Sistema_Ferreteria.Formularios;
+using Sistema_Ferreteria.Reportes;
 
 namespace Sistema_Ferreteria
 {
@@ -28,8 +29,7 @@ namespace Sistema_Ferreteria
             //Aplication Settings
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new PaginaPrincipal());
-            Application.Run(new frmVentas());
+            Application.Run(new PaginaPrincipal());
         }
     }
 }

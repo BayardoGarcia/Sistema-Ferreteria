@@ -9,11 +9,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Sistema_Ferreteria.Formularios
+namespace Sistema_Ferreteria.Reportes
 {
-    public partial class frmVenta : DevExpress.XtraEditors.XtraForm
+    public partial class rpvVentasFecha : DevExpress.XtraEditors.XtraForm
     {
-        public frmVenta()
+        public rpvVentasFecha()
         {
             InitializeComponent();
         }

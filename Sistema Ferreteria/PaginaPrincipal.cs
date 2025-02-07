@@ -27,6 +27,8 @@ namespace Sistema_Ferreteria
             BlockSubMenu();//Bloquea los submenus
             IdUsuario = 0;
         }
+        #region "Metodos de validacion de permisos"
+
         private void btnLogin_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmLogin frm = new frmLogin(); //Se crea una instancia del formulario de login
@@ -36,7 +38,8 @@ namespace Sistema_Ferreteria
                 if (IdUsuario != 0)
                 {
                     Usuarios usuario = (Usuarios)unitOfWork.GetObjectByKey<Usuarios>(IdUsuario);
-                    slblUsuario.Caption = "Usuario: " + usuario.nombre +" " +usuario.apellido;//Muestra el nombre del usuario en el status bar
+                    Roles roles = (Roles)unitOfWork.GetObjectByKey<Roles>(usuario.rol.idRol);
+                    slblUsuario.Caption = "Usuario: " + usuario.nombre + " " + usuario.apellido + " - " + roles.rol;
                     btnLogout.Enabled = true; //Activa el boton para cerrar sesion
                     btnLogin.Enabled = false; //Desactiva el boton para iniciar sesion
                     if (usuario.rol.idRol == 1)
@@ -48,6 +51,23 @@ namespace Sistema_Ferreteria
                 }
             }
         }
+        private void BlockSubMenu()
+        {
+            //Agregar bloqueos a los submenus
+        }
+        private void ActivarPrivilegioAdmin()
+        {
+            //Activar los submenus para el administrador
+        }
+        private void ActivarPrivilegioGerencia()
+        {
+            //Activar los submenus para la gerencia
+        }
+        private void ActivarPrivilegioVentas()
+        {
+            //Activar los submenus para ventas
+        }
+        #endregion
         private void btnLogout_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             //Valida si hay una sesion iniciada
@@ -67,22 +87,7 @@ namespace Sistema_Ferreteria
             btnLogin.Enabled = true; //activa el boton para iniciar sesion
             BlockSubMenu();
         }
-        private void BlockSubMenu()
-        {
-            //Agregar bloqueos a los submenus
-        }
-        private void ActivarPrivilegioAdmin()
-        {
-            //Activar los submenus para el administrador
-        }
-        private void ActivarPrivilegioGerencia()
-        {
-            //Activar los submenus para la gerencia
-        }
-        private void ActivarPrivilegioVentas()
-        {
-            //Activar los submenus para ventas
-        }
+        
         private void btnVentas_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmVentas frm = new frmVentas();

@@ -12,6 +12,10 @@ namespace Sistema_Ferreteria.Database
     {
         public Usuarios(Session session) : base(session) { }
         public override void AfterConstruction() { base.AfterConstruction(); }
+        public string NombreCompleto
+        {
+            get => nombre + " " + apellido;
+        }
     }
 
 }

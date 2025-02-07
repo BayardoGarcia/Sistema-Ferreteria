@@ -37,18 +37,33 @@
       <HintPath>..\packages\BouncyCastle.Cryptography.2.3.1\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.BonusSkins.v22.2" />
+    <Reference Include="DevExpress.Charts.v22.2.Core, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.CodeParser.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.Desktop.v22.2" />
     <Reference Include="DevExpress.Data.v22.2" />
+    <Reference Include="DevExpress.DataAccess.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v22.2.Core, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v22.2.Core, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v22.2.Drawing, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.PivotGrid.v22.2.Core, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v22.2.Core, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v22.2.Export, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v22.2" />
     <Reference Include="DevExpress.Sparkline.v22.2.Core" />
+    <Reference Include="DevExpress.Utils.v22.2.UI, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Xpo.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraBars.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraEditors.v22.2" />
     <Reference Include="DevExpress.Printing.v22.2.Core" />
     <Reference Include="DevExpress.Drawing.v22.2" />
+    <Reference Include="DevExpress.XtraGauges.v22.2.Core, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v22.2.Extensions, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="Google.Protobuf, Version=3.26.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Protobuf.3.26.1\lib\net45\Google.Protobuf.dll</HintPath>
     </Reference>
@@ -240,6 +255,114 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reportes\rpdDetallesVentas.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\rpdDetallesVentas.Designer.cs">
+      <DependentUpon>rpdDetallesVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\rpdDetalleVentasCliente.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\rpdDetalleVentasCliente.Designer.cs">
+      <DependentUpon>rpdDetalleVentasCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\rpdEntradaProductos.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\rpdEntradaProductos.Designer.cs">
+      <DependentUpon>rpdEntradaProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\rpdInventario.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\rpdInventario.Designer.cs">
+      <DependentUpon>rpdInventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\rpdProductosCero.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\rpdProductosCero.Designer.cs">
+      <DependentUpon>rpdProductosCero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\rpdVenstasEmpleado.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\rpdVenstasEmpleado.Designer.cs">
+      <DependentUpon>rpdVenstasEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\rpdVentasClientes.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\rpdVentasClientes.Designer.cs">
+      <DependentUpon>rpdVentasClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\rpdVentasFecha.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\rpdVentasFecha.Designer.cs">
+      <DependentUpon>rpdVentasFecha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\rpdVentasProductos.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\rpdVentasProductos.Designer.cs">
+      <DependentUpon>rpdVentasProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\rpvDetallesVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\rpvDetallesVenta.Designer.cs">
+      <DependentUpon>rpvDetallesVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\rpvDetallesVentasCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\rpvDetallesVentasCliente.Designer.cs">
+      <DependentUpon>rpvDetallesVentasCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\rpvEntradasProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\rpvEntradasProductos.Designer.cs">
+      <DependentUpon>rpvEntradasProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\rpvInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\rpvInventario.Designer.cs">
+      <DependentUpon>rpvInventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\rpvProductosCero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\rpvProductosCero.Designer.cs">
+      <DependentUpon>rpvProductosCero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\rpvVentasClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\rpvVentasClientes.Designer.cs">
+      <DependentUpon>rpvVentasClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\rpvVentasEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\rpvVentasEmpleado.Designer.cs">
+      <DependentUpon>rpvVentasEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\rpvVentasFecha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\rpvVentasFecha.Designer.cs">
+      <DependentUpon>rpvVentasFecha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\rpvVentasProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\rpvVentasProducto.Designer.cs">
+      <DependentUpon>rpvVentasProducto.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Formularios\frmDetallesUsuarios.resx">
       <DependentUpon>frmDetallesUsuarios.cs</DependentUpon>
     </EmbeddedResource>
@@ -289,6 +412,60 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Reportes\rpdDetallesVentas.resx">
+      <DependentUpon>rpdDetallesVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rpdDetalleVentasCliente.resx">
+      <DependentUpon>rpdDetalleVentasCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rpdEntradaProductos.resx">
+      <DependentUpon>rpdEntradaProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rpdInventario.resx">
+      <DependentUpon>rpdInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rpdProductosCero.resx">
+      <DependentUpon>rpdProductosCero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rpdVenstasEmpleado.resx">
+      <DependentUpon>rpdVenstasEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rpdVentasClientes.resx">
+      <DependentUpon>rpdVentasClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rpdVentasFecha.resx">
+      <DependentUpon>rpdVentasFecha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rpdVentasProductos.resx">
+      <DependentUpon>rpdVentasProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rpvDetallesVenta.resx">
+      <DependentUpon>rpvDetallesVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rpvDetallesVentasCliente.resx">
+      <DependentUpon>rpvDetallesVentasCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rpvEntradasProductos.resx">
+      <DependentUpon>rpvEntradasProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rpvInventario.resx">
+      <DependentUpon>rpvInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rpvProductosCero.resx">
+      <DependentUpon>rpvProductosCero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rpvVentasClientes.resx">
+      <DependentUpon>rpvVentasClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rpvVentasEmpleado.resx">
+      <DependentUpon>rpvVentasEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rpvVentasFecha.resx">
+      <DependentUpon>rpvVentasFecha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rpvVentasProducto.resx">
+      <DependentUpon>rpvVentasProducto.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="App.config" />
     <None Include="ORMDataModel.xpo" />
     <None Include="ORMDataModel.xpo.diagram">

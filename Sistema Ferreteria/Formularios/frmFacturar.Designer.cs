@@ -33,7 +33,6 @@
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.cboCliente = new System.Windows.Forms.ComboBox();
-            this.xpClientes = new DevExpress.Xpo.XPCollection(this.components);
             this.unitOfWork = new DevExpress.Xpo.UnitOfWork(this.components);
             this.lblTotal = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -54,10 +53,10 @@
             this.emptySpaceItem6 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem7 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem8 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.xpClientes = new DevExpress.Xpo.XPCollection(this.components);
             this.xpProductos = new DevExpress.Xpo.XPCollection(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.xpClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.unitOfWork)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
@@ -74,6 +73,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xpClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xpProductos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -111,11 +111,6 @@
             this.cboCliente.Size = new System.Drawing.Size(343, 24);
             this.cboCliente.TabIndex = 6;
             this.cboCliente.ValueMember = "idCliente";
-            // 
-            // xpClientes
-            // 
-            this.xpClientes.ObjectType = typeof(Sistema_Ferreteria.Database.Clientes);
-            this.xpClientes.Session = this.unitOfWork;
             // 
             // lblTotal
             // 
@@ -336,6 +331,11 @@
             this.emptySpaceItem8.Size = new System.Drawing.Size(407, 10);
             this.emptySpaceItem8.TextSize = new System.Drawing.Size(0, 0);
             // 
+            // xpClientes
+            // 
+            this.xpClientes.ObjectType = typeof(Sistema_Ferreteria.Database.Clientes);
+            this.xpClientes.Session = this.unitOfWork;
+            // 
             // xpProductos
             // 
             this.xpProductos.ObjectType = typeof(Sistema_Ferreteria.Database.Productos);
@@ -356,7 +356,7 @@
             this.Load += new System.EventHandler(this.frmFacturar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.xpClientes)).EndInit();
+            this.layoutControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.unitOfWork)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
@@ -373,6 +373,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xpClientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xpProductos)).EndInit();
             this.ResumeLayout(false);
 

@@ -54,6 +54,7 @@ namespace Sistema_Ferreteria.Formularios
             if (producto == null) return;
             IdProducto = producto.idProducto;
             btnAgregarProducto.Enabled = true;
+            gridViewProducto.UpdateCurrentRow();
         }
         #endregion
         #region "Eventos de botones"
@@ -89,12 +90,17 @@ namespace Sistema_Ferreteria.Formularios
                 LoadGridDetalleVenta();
                 Total = Total + listaProducto.Importe;
                 lblMonto.Text = "Total: " + Total.ToString();
+
             }
             else
             {
                 XtraMessageBox.Show("El valor no es valido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             btnAgregarProducto.Enabled = false;
+            xpProductos.Reload();
+            gridProducto.RefreshDataSource();   
+            gridViewProducto.RefreshData();
+            gridProducto.Update();
         }
         private void btnEliminarProducto_Click(object sender, EventArgs e)
         {
@@ -126,11 +132,14 @@ namespace Sistema_Ferreteria.Formularios
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 Limpiar();
+                xpProductos.Reload();
+                gridProducto.RefreshDataSource();
+                gridViewProducto.RefreshData();
+                gridProducto.Update();
                 btnFacturar.Enabled = false;
                 btnLimpiarProducto.Enabled = false;
                 btnAgregarProducto.Enabled = false;
             }
-            xpProductos.Reload();
         }
         #endregion
     }
