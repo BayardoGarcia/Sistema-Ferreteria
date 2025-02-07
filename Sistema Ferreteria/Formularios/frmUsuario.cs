@@ -144,6 +144,7 @@ namespace Sistema_Ferreteria.Formularios
             usuarios.Save();
             unitOfWork.CommitChanges();
             gridUsuarios.Enabled = true;
+            Editar = false;
         }
         private void Guardar()
         {
@@ -160,6 +161,7 @@ namespace Sistema_Ferreteria.Formularios
             usuarios.activo = true;  
             usuarios.Save();
             unitOfWork.CommitChanges();
+            Editar = false;
         }
         private void ValidarTelefono(object sender, KeyPressEventArgs e)
         {
@@ -183,7 +185,7 @@ namespace Sistema_Ferreteria.Formularios
         #endregion
         #region "Eventos de botones"
         private void btnNuevoUsuario_Click(object sender, EventArgs e)
-        {
+        {   Editar = false;
             DesbloquearControles();
             btnNuevoUsuario.Enabled = false;
             gridUsuarios.Enabled = false;

@@ -36,33 +36,41 @@
             this.btnLogout = new DevExpress.XtraBars.BarButtonItem();
             this.slblUsuario = new DevExpress.XtraBars.BarStaticItem();
             this.btnVentas = new DevExpress.XtraBars.BarButtonItem();
-            this.ribPageUsuario = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribPagVenta = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.unitOfWork = new DevExpress.Xpo.UnitOfWork(this.components);
-            this.documentManager = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
-            this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
-            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.btnClientes = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.btnGestionProductos = new DevExpress.XtraBars.BarButtonItem();
             this.btnEntradasProductos = new DevExpress.XtraBars.BarButtonItem();
             this.btnProveedores = new DevExpress.XtraBars.BarButtonItem();
             this.btnCategorias = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.btnVentasFecha = new DevExpress.XtraBars.BarButtonItem();
             this.btnVentasProducto = new DevExpress.XtraBars.BarButtonItem();
             this.btnVentasCliente = new DevExpress.XtraBars.BarButtonItem();
             this.btnVentasDetalles = new DevExpress.XtraBars.BarButtonItem();
             this.btnVentasDetalleCliente = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.btnInventario = new DevExpress.XtraBars.BarButtonItem();
             this.btnProductosCero = new DevExpress.XtraBars.BarButtonItem();
             this.btnProductosIngreso = new DevExpress.XtraBars.BarButtonItem();
+            this.btnUsuarios = new DevExpress.XtraBars.BarButtonItem();
+            this.btnVisorUsuarios = new DevExpress.XtraBars.BarButtonItem();
+            this.btnRespaldar = new DevExpress.XtraBars.BarButtonItem();
+            this.btnRestaurar = new DevExpress.XtraBars.BarButtonItem();
+            this.btnVentasEmpleado = new DevExpress.XtraBars.BarButtonItem();
+            this.ribPagUsuario = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribPagVenta = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribClientes = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribProductos = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribPagReportes = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribPageSistema = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
+            this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.unitOfWork = new DevExpress.Xpo.UnitOfWork(this.components);
+            this.documentManager = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
+            this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.unitOfWork)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager)).BeginInit();
@@ -93,14 +101,20 @@
             this.btnVentasDetalleCliente,
             this.btnInventario,
             this.btnProductosCero,
-            this.btnProductosIngreso});
+            this.btnProductosIngreso,
+            this.btnUsuarios,
+            this.btnVisorUsuarios,
+            this.btnRespaldar,
+            this.btnRestaurar,
+            this.btnVentasEmpleado});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 20;
+            this.ribbonControl1.MaxItemId = 25;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.ribPageUsuario,
+            this.ribPagUsuario,
             this.ribPagVenta,
-            this.ribbonPage1});
+            this.ribPagReportes,
+            this.ribPageSistema});
             this.ribbonControl1.Size = new System.Drawing.Size(1137, 209);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             // 
@@ -142,13 +156,175 @@
             this.btnVentas.Name = "btnVentas";
             this.btnVentas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnVentas_ItemClick);
             // 
-            // ribPageUsuario
+            // btnClientes
             // 
-            this.ribPageUsuario.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.btnClientes.Caption = "Clientes";
+            this.btnClientes.Id = 7;
+            this.btnClientes.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnClientes.ImageOptions.Image")));
+            this.btnClientes.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnClientes.ImageOptions.LargeImage")));
+            this.btnClientes.Name = "btnClientes";
+            this.btnClientes.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnClientes_ItemClick);
+            // 
+            // btnGestionProductos
+            // 
+            this.btnGestionProductos.Caption = "Gestion de Productos";
+            this.btnGestionProductos.Id = 8;
+            this.btnGestionProductos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGestionProductos.ImageOptions.Image")));
+            this.btnGestionProductos.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGestionProductos.ImageOptions.LargeImage")));
+            this.btnGestionProductos.Name = "btnGestionProductos";
+            this.btnGestionProductos.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGestionProductos_ItemClick);
+            // 
+            // btnEntradasProductos
+            // 
+            this.btnEntradasProductos.Caption = "Entrada de Productos";
+            this.btnEntradasProductos.Id = 9;
+            this.btnEntradasProductos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEntradasProductos.ImageOptions.Image")));
+            this.btnEntradasProductos.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnEntradasProductos.ImageOptions.LargeImage")));
+            this.btnEntradasProductos.Name = "btnEntradasProductos";
+            this.btnEntradasProductos.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEntradasProductos_ItemClick);
+            // 
+            // btnProveedores
+            // 
+            this.btnProveedores.Caption = "Proveedores";
+            this.btnProveedores.Id = 10;
+            this.btnProveedores.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnProveedores.ImageOptions.Image")));
+            this.btnProveedores.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnProveedores.ImageOptions.LargeImage")));
+            this.btnProveedores.Name = "btnProveedores";
+            this.btnProveedores.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnProveedores_ItemClick);
+            // 
+            // btnCategorias
+            // 
+            this.btnCategorias.Caption = "Categorias de Productos";
+            this.btnCategorias.Id = 11;
+            this.btnCategorias.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCategorias.ImageOptions.Image")));
+            this.btnCategorias.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnCategorias.ImageOptions.LargeImage")));
+            this.btnCategorias.Name = "btnCategorias";
+            this.btnCategorias.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCategorias_ItemClick);
+            // 
+            // btnVentasFecha
+            // 
+            this.btnVentasFecha.Caption = "Ventas por Fecha";
+            this.btnVentasFecha.Id = 12;
+            this.btnVentasFecha.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnVentasFecha.ImageOptions.Image")));
+            this.btnVentasFecha.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnVentasFecha.ImageOptions.LargeImage")));
+            this.btnVentasFecha.Name = "btnVentasFecha";
+            this.btnVentasFecha.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnVentasFecha_ItemClick);
+            // 
+            // btnVentasProducto
+            // 
+            this.btnVentasProducto.Caption = "Ventas por Producto";
+            this.btnVentasProducto.Id = 13;
+            this.btnVentasProducto.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnVentasProducto.ImageOptions.Image")));
+            this.btnVentasProducto.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnVentasProducto.ImageOptions.LargeImage")));
+            this.btnVentasProducto.Name = "btnVentasProducto";
+            this.btnVentasProducto.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnVentasProducto_ItemClick);
+            // 
+            // btnVentasCliente
+            // 
+            this.btnVentasCliente.Caption = "Ventas por Cliente";
+            this.btnVentasCliente.Id = 14;
+            this.btnVentasCliente.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnVentasCliente.ImageOptions.Image")));
+            this.btnVentasCliente.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnVentasCliente.ImageOptions.LargeImage")));
+            this.btnVentasCliente.Name = "btnVentasCliente";
+            this.btnVentasCliente.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnVentasCliente_ItemClick);
+            // 
+            // btnVentasDetalles
+            // 
+            this.btnVentasDetalles.Caption = "Detalles de Venta";
+            this.btnVentasDetalles.Id = 15;
+            this.btnVentasDetalles.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnVentasDetalles.ImageOptions.Image")));
+            this.btnVentasDetalles.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnVentasDetalles.ImageOptions.LargeImage")));
+            this.btnVentasDetalles.Name = "btnVentasDetalles";
+            this.btnVentasDetalles.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnVentasDetalles_ItemClick);
+            // 
+            // btnVentasDetalleCliente
+            // 
+            this.btnVentasDetalleCliente.Caption = "Detalles de Venta por Cliente";
+            this.btnVentasDetalleCliente.Id = 16;
+            this.btnVentasDetalleCliente.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnVentasDetalleCliente.ImageOptions.Image")));
+            this.btnVentasDetalleCliente.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnVentasDetalleCliente.ImageOptions.LargeImage")));
+            this.btnVentasDetalleCliente.Name = "btnVentasDetalleCliente";
+            this.btnVentasDetalleCliente.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnVentasDetalleCliente_ItemClick);
+            // 
+            // btnInventario
+            // 
+            this.btnInventario.Caption = "Inventario";
+            this.btnInventario.Id = 17;
+            this.btnInventario.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnInventario.ImageOptions.Image")));
+            this.btnInventario.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnInventario.ImageOptions.LargeImage")));
+            this.btnInventario.Name = "btnInventario";
+            this.btnInventario.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnInventario_ItemClick);
+            // 
+            // btnProductosCero
+            // 
+            this.btnProductosCero.Caption = "Productos en Cero";
+            this.btnProductosCero.Id = 18;
+            this.btnProductosCero.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnProductosCero.ImageOptions.Image")));
+            this.btnProductosCero.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnProductosCero.ImageOptions.LargeImage")));
+            this.btnProductosCero.Name = "btnProductosCero";
+            this.btnProductosCero.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnProductosCero_ItemClick);
+            // 
+            // btnProductosIngreso
+            // 
+            this.btnProductosIngreso.Caption = "Entrada de Productos";
+            this.btnProductosIngreso.Id = 19;
+            this.btnProductosIngreso.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnProductosIngreso.ImageOptions.Image")));
+            this.btnProductosIngreso.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnProductosIngreso.ImageOptions.LargeImage")));
+            this.btnProductosIngreso.Name = "btnProductosIngreso";
+            this.btnProductosIngreso.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnProductosIngreso_ItemClick);
+            // 
+            // btnUsuarios
+            // 
+            this.btnUsuarios.Caption = "Usuarios";
+            this.btnUsuarios.Id = 20;
+            this.btnUsuarios.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnUsuarios.ImageOptions.Image")));
+            this.btnUsuarios.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnUsuarios.ImageOptions.LargeImage")));
+            this.btnUsuarios.Name = "btnUsuarios";
+            this.btnUsuarios.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnUsuarios_ItemClick);
+            // 
+            // btnVisorUsuarios
+            // 
+            this.btnVisorUsuarios.Caption = "Visor de Usuarios";
+            this.btnVisorUsuarios.Id = 21;
+            this.btnVisorUsuarios.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnVisorUsuarios.ImageOptions.Image")));
+            this.btnVisorUsuarios.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnVisorUsuarios.ImageOptions.LargeImage")));
+            this.btnVisorUsuarios.Name = "btnVisorUsuarios";
+            this.btnVisorUsuarios.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnVisorUsuarios_ItemClick);
+            // 
+            // btnRespaldar
+            // 
+            this.btnRespaldar.Caption = "Respaldar Base de Datos";
+            this.btnRespaldar.Id = 22;
+            this.btnRespaldar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRespaldar.ImageOptions.Image")));
+            this.btnRespaldar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnRespaldar.ImageOptions.LargeImage")));
+            this.btnRespaldar.Name = "btnRespaldar";
+            this.btnRespaldar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRespaldar_ItemClick);
+            // 
+            // btnRestaurar
+            // 
+            this.btnRestaurar.Caption = "Restaurar Base de Datos";
+            this.btnRestaurar.Id = 23;
+            this.btnRestaurar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRestaurar.ImageOptions.Image")));
+            this.btnRestaurar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnRestaurar.ImageOptions.LargeImage")));
+            this.btnRestaurar.Name = "btnRestaurar";
+            this.btnRestaurar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRestaurar_ItemClick);
+            // 
+            // btnVentasEmpleado
+            // 
+            this.btnVentasEmpleado.Caption = "Ventas por Empleado";
+            this.btnVentasEmpleado.Id = 24;
+            this.btnVentasEmpleado.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnVentasEmpleado.ImageOptions.Image")));
+            this.btnVentasEmpleado.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnVentasEmpleado.ImageOptions.LargeImage")));
+            this.btnVentasEmpleado.Name = "btnVentasEmpleado";
+            this.btnVentasEmpleado.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnVentasEmpleado_ItemClick);
+            // 
+            // ribPagUsuario
+            // 
+            this.ribPagUsuario.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1});
-            this.ribPageUsuario.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribPageUsuario.ImageOptions.Image")));
-            this.ribPageUsuario.Name = "ribPageUsuario";
-            this.ribPageUsuario.Text = "Sesion";
+            this.ribPagUsuario.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribPagUsuario.ImageOptions.Image")));
+            this.ribPagUsuario.Name = "ribPagUsuario";
+            this.ribPagUsuario.Text = "Sesion";
             // 
             // ribbonPageGroup1
             // 
@@ -161,8 +337,8 @@
             // 
             this.ribPagVenta.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup3,
-            this.ribbonPageGroup2,
-            this.ribbonPageGroup4});
+            this.ribClientes,
+            this.ribProductos});
             this.ribPagVenta.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribPagVenta.ImageOptions.Image")));
             this.ribPagVenta.Name = "ribPagVenta";
             this.ribPagVenta.Text = "Principal";
@@ -172,6 +348,72 @@
             this.ribbonPageGroup3.ItemLinks.Add(this.btnVentas);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.Text = "Ventas";
+            // 
+            // ribClientes
+            // 
+            this.ribClientes.ItemLinks.Add(this.btnClientes);
+            this.ribClientes.Name = "ribClientes";
+            this.ribClientes.Text = "Clientes";
+            // 
+            // ribProductos
+            // 
+            this.ribProductos.ItemLinks.Add(this.btnGestionProductos);
+            this.ribProductos.ItemLinks.Add(this.btnEntradasProductos);
+            this.ribProductos.ItemLinks.Add(this.btnCategorias);
+            this.ribProductos.ItemLinks.Add(this.btnProveedores);
+            this.ribProductos.Name = "ribProductos";
+            this.ribProductos.Text = "Productos";
+            // 
+            // ribPagReportes
+            // 
+            this.ribPagReportes.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup5,
+            this.ribbonPageGroup6});
+            this.ribPagReportes.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribPagReportes.ImageOptions.Image")));
+            this.ribPagReportes.Name = "ribPagReportes";
+            this.ribPagReportes.Text = "Reportes";
+            // 
+            // ribbonPageGroup5
+            // 
+            this.ribbonPageGroup5.ItemLinks.Add(this.btnVentasFecha);
+            this.ribbonPageGroup5.ItemLinks.Add(this.btnVentasProducto);
+            this.ribbonPageGroup5.ItemLinks.Add(this.btnVentasCliente);
+            this.ribbonPageGroup5.ItemLinks.Add(this.btnVentasEmpleado);
+            this.ribbonPageGroup5.ItemLinks.Add(this.btnVentasDetalles);
+            this.ribbonPageGroup5.ItemLinks.Add(this.btnVentasDetalleCliente);
+            this.ribbonPageGroup5.Name = "ribbonPageGroup5";
+            this.ribbonPageGroup5.Text = "Ventas";
+            // 
+            // ribbonPageGroup6
+            // 
+            this.ribbonPageGroup6.ItemLinks.Add(this.btnInventario);
+            this.ribbonPageGroup6.ItemLinks.Add(this.btnProductosCero);
+            this.ribbonPageGroup6.ItemLinks.Add(this.btnProductosIngreso);
+            this.ribbonPageGroup6.Name = "ribbonPageGroup6";
+            this.ribbonPageGroup6.Text = "Productos";
+            // 
+            // ribPageSistema
+            // 
+            this.ribPageSistema.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup7,
+            this.ribbonPageGroup8});
+            this.ribPageSistema.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribPageSistema.ImageOptions.Image")));
+            this.ribPageSistema.Name = "ribPageSistema";
+            this.ribPageSistema.Text = "Sistema";
+            // 
+            // ribbonPageGroup7
+            // 
+            this.ribbonPageGroup7.ItemLinks.Add(this.btnUsuarios);
+            this.ribbonPageGroup7.ItemLinks.Add(this.btnVisorUsuarios);
+            this.ribbonPageGroup7.Name = "ribbonPageGroup7";
+            this.ribbonPageGroup7.Text = "Usuarios";
+            // 
+            // ribbonPageGroup8
+            // 
+            this.ribbonPageGroup8.ItemLinks.Add(this.btnRespaldar);
+            this.ribbonPageGroup8.ItemLinks.Add(this.btnRestaurar);
+            this.ribbonPageGroup8.Name = "ribbonPageGroup8";
+            this.ribbonPageGroup8.Text = "Base de Datos";
             // 
             // ribbonStatusBar1
             // 
@@ -193,152 +435,6 @@
             this.documentManager.View = this.tabbedView1;
             this.documentManager.ViewCollection.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseView[] {
             this.tabbedView1});
-            // 
-            // ribbonPageGroup2
-            // 
-            this.ribbonPageGroup2.ItemLinks.Add(this.btnClientes);
-            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
-            this.ribbonPageGroup2.Text = "Clientes";
-            // 
-            // btnClientes
-            // 
-            this.btnClientes.Caption = "Clientes";
-            this.btnClientes.Id = 7;
-            this.btnClientes.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.btnClientes.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
-            this.btnClientes.Name = "btnClientes";
-            // 
-            // ribbonPageGroup4
-            // 
-            this.ribbonPageGroup4.ItemLinks.Add(this.btnGestionProductos);
-            this.ribbonPageGroup4.ItemLinks.Add(this.btnEntradasProductos);
-            this.ribbonPageGroup4.ItemLinks.Add(this.btnCategorias);
-            this.ribbonPageGroup4.ItemLinks.Add(this.btnProveedores);
-            this.ribbonPageGroup4.Name = "ribbonPageGroup4";
-            this.ribbonPageGroup4.Text = "Productos";
-            // 
-            // btnGestionProductos
-            // 
-            this.btnGestionProductos.Caption = "Gestion de Productos";
-            this.btnGestionProductos.Id = 8;
-            this.btnGestionProductos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image1")));
-            this.btnGestionProductos.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage1")));
-            this.btnGestionProductos.Name = "btnGestionProductos";
-            // 
-            // btnEntradasProductos
-            // 
-            this.btnEntradasProductos.Caption = "Entrada de Productos";
-            this.btnEntradasProductos.Id = 9;
-            this.btnEntradasProductos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image2")));
-            this.btnEntradasProductos.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage2")));
-            this.btnEntradasProductos.Name = "btnEntradasProductos";
-            // 
-            // btnProveedores
-            // 
-            this.btnProveedores.Caption = "Proveedores";
-            this.btnProveedores.Id = 10;
-            this.btnProveedores.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnProveedores.ImageOptions.Image")));
-            this.btnProveedores.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnProveedores.ImageOptions.LargeImage")));
-            this.btnProveedores.Name = "btnProveedores";
-            // 
-            // btnCategorias
-            // 
-            this.btnCategorias.Caption = "Categorias de Productos";
-            this.btnCategorias.Id = 11;
-            this.btnCategorias.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image3")));
-            this.btnCategorias.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage3")));
-            this.btnCategorias.Name = "btnCategorias";
-            // 
-            // ribbonPage1
-            // 
-            this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup5,
-            this.ribbonPageGroup6});
-            this.ribbonPage1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPage1.ImageOptions.Image")));
-            this.ribbonPage1.Name = "ribbonPage1";
-            this.ribbonPage1.Text = "Reportes";
-            // 
-            // ribbonPageGroup5
-            // 
-            this.ribbonPageGroup5.ItemLinks.Add(this.btnVentasFecha);
-            this.ribbonPageGroup5.ItemLinks.Add(this.btnVentasProducto);
-            this.ribbonPageGroup5.ItemLinks.Add(this.btnVentasCliente);
-            this.ribbonPageGroup5.ItemLinks.Add(this.btnVentasDetalles);
-            this.ribbonPageGroup5.ItemLinks.Add(this.btnVentasDetalleCliente);
-            this.ribbonPageGroup5.Name = "ribbonPageGroup5";
-            this.ribbonPageGroup5.Text = "Ventas";
-            // 
-            // btnVentasFecha
-            // 
-            this.btnVentasFecha.Caption = "Ventas por Fecha";
-            this.btnVentasFecha.Id = 12;
-            this.btnVentasFecha.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
-            this.btnVentasFecha.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
-            this.btnVentasFecha.Name = "btnVentasFecha";
-            // 
-            // btnVentasProducto
-            // 
-            this.btnVentasProducto.Caption = "Ventas por Producto";
-            this.btnVentasProducto.Id = 13;
-            this.btnVentasProducto.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image4")));
-            this.btnVentasProducto.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage4")));
-            this.btnVentasProducto.Name = "btnVentasProducto";
-            // 
-            // btnVentasCliente
-            // 
-            this.btnVentasCliente.Caption = "Ventas por Empleado";
-            this.btnVentasCliente.Id = 14;
-            this.btnVentasCliente.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image5")));
-            this.btnVentasCliente.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage5")));
-            this.btnVentasCliente.Name = "btnVentasCliente";
-            // 
-            // btnVentasDetalles
-            // 
-            this.btnVentasDetalles.Caption = "Detalles de Venta";
-            this.btnVentasDetalles.Id = 15;
-            this.btnVentasDetalles.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image6")));
-            this.btnVentasDetalles.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage6")));
-            this.btnVentasDetalles.Name = "btnVentasDetalles";
-            // 
-            // btnVentasDetalleCliente
-            // 
-            this.btnVentasDetalleCliente.Caption = "Detalles de Venta por Cliente";
-            this.btnVentasDetalleCliente.Id = 16;
-            this.btnVentasDetalleCliente.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image1")));
-            this.btnVentasDetalleCliente.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage1")));
-            this.btnVentasDetalleCliente.Name = "btnVentasDetalleCliente";
-            // 
-            // ribbonPageGroup6
-            // 
-            this.ribbonPageGroup6.ItemLinks.Add(this.btnInventario);
-            this.ribbonPageGroup6.ItemLinks.Add(this.btnProductosCero);
-            this.ribbonPageGroup6.ItemLinks.Add(this.btnProductosIngreso);
-            this.ribbonPageGroup6.Name = "ribbonPageGroup6";
-            this.ribbonPageGroup6.Text = "Productos";
-            // 
-            // btnInventario
-            // 
-            this.btnInventario.Caption = "Inventario";
-            this.btnInventario.Id = 17;
-            this.btnInventario.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image7")));
-            this.btnInventario.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage7")));
-            this.btnInventario.Name = "btnInventario";
-            // 
-            // btnProductosCero
-            // 
-            this.btnProductosCero.Caption = "Productos en Cero";
-            this.btnProductosCero.Id = 18;
-            this.btnProductosCero.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image2")));
-            this.btnProductosCero.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage2")));
-            this.btnProductosCero.Name = "btnProductosCero";
-            // 
-            // btnProductosIngreso
-            // 
-            this.btnProductosIngreso.Caption = "Entrada de Productos";
-            this.btnProductosIngreso.Id = 19;
-            this.btnProductosIngreso.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image8")));
-            this.btnProductosIngreso.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage8")));
-            this.btnProductosIngreso.Name = "btnProductosIngreso";
             // 
             // PaginaPrincipal
             // 
@@ -366,7 +462,7 @@
         #endregion
 
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribPageUsuario;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribPagUsuario;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar1;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
@@ -380,14 +476,14 @@
         private DevExpress.XtraBars.BarButtonItem btnVentas;
         private DevExpress.XtraBars.Docking2010.DocumentManager documentManager;
         private DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView tabbedView1;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribClientes;
         private DevExpress.XtraBars.BarButtonItem btnClientes;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribProductos;
         private DevExpress.XtraBars.BarButtonItem btnGestionProductos;
         private DevExpress.XtraBars.BarButtonItem btnEntradasProductos;
         private DevExpress.XtraBars.BarButtonItem btnProveedores;
         private DevExpress.XtraBars.BarButtonItem btnCategorias;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribPagReportes;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
         private DevExpress.XtraBars.BarButtonItem btnVentasFecha;
         private DevExpress.XtraBars.BarButtonItem btnVentasProducto;
@@ -398,5 +494,13 @@
         private DevExpress.XtraBars.BarButtonItem btnInventario;
         private DevExpress.XtraBars.BarButtonItem btnProductosCero;
         private DevExpress.XtraBars.BarButtonItem btnProductosIngreso;
+        private DevExpress.XtraBars.BarButtonItem btnUsuarios;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribPageSistema;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
+        private DevExpress.XtraBars.BarButtonItem btnVisorUsuarios;
+        private DevExpress.XtraBars.BarButtonItem btnRespaldar;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
+        private DevExpress.XtraBars.BarButtonItem btnRestaurar;
+        private DevExpress.XtraBars.BarButtonItem btnVentasEmpleado;
     }
 }
