@@ -54,6 +54,7 @@
             this.btnRespaldar = new DevExpress.XtraBars.BarButtonItem();
             this.btnRestaurar = new DevExpress.XtraBars.BarButtonItem();
             this.btnVentasEmpleado = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDetallesClientes = new DevExpress.XtraBars.BarButtonItem();
             this.ribPagUsuario = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribPagVenta = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -106,16 +107,17 @@
             this.btnVisorUsuarios,
             this.btnRespaldar,
             this.btnRestaurar,
-            this.btnVentasEmpleado});
+            this.btnVentasEmpleado,
+            this.btnDetallesClientes});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 25;
+            this.ribbonControl1.MaxItemId = 26;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribPagUsuario,
             this.ribPagVenta,
             this.ribPagReportes,
             this.ribPageSistema});
-            this.ribbonControl1.Size = new System.Drawing.Size(1137, 209);
+            this.ribbonControl1.Size = new System.Drawing.Size(1139, 214);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             // 
             // skinDropDownButtonItem1
@@ -318,6 +320,15 @@
             this.btnVentasEmpleado.Name = "btnVentasEmpleado";
             this.btnVentasEmpleado.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnVentasEmpleado_ItemClick);
             // 
+            // btnDetallesClientes
+            // 
+            this.btnDetallesClientes.Caption = "Listado de Clientes";
+            this.btnDetallesClientes.Id = 25;
+            this.btnDetallesClientes.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDetallesClientes.ImageOptions.Image")));
+            this.btnDetallesClientes.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDetallesClientes.ImageOptions.LargeImage")));
+            this.btnDetallesClientes.Name = "btnDetallesClientes";
+            this.btnDetallesClientes.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDetallesClientes_ItemClick);
+            // 
             // ribPagUsuario
             // 
             this.ribPagUsuario.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -352,6 +363,7 @@
             // ribClientes
             // 
             this.ribClientes.ItemLinks.Add(this.btnClientes);
+            this.ribClientes.ItemLinks.Add(this.btnDetallesClientes);
             this.ribClientes.Name = "ribClientes";
             this.ribClientes.Text = "Clientes";
             // 
@@ -418,10 +430,10 @@
             // ribbonStatusBar1
             // 
             this.ribbonStatusBar1.ItemLinks.Add(this.slblUsuario);
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 698);
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 697);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(1137, 30);
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(1139, 32);
             // 
             // ribbonPage2
             // 
@@ -440,7 +452,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1137, 728);
+            this.ClientSize = new System.Drawing.Size(1139, 729);
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbonControl1);
             this.IsMdiContainer = true;
@@ -502,5 +514,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
         private DevExpress.XtraBars.BarButtonItem btnRestaurar;
         private DevExpress.XtraBars.BarButtonItem btnVentasEmpleado;
+        private DevExpress.XtraBars.BarButtonItem btnDetallesClientes;
     }
 }

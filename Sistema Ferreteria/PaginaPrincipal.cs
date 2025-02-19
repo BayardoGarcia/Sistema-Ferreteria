@@ -157,6 +157,12 @@ namespace Sistema_Ferreteria
             frm.MdiParent = this;
             frm.Show();
         }
+        private void btnDetallesClientes_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmDetallesClientes frm = new frmDetallesClientes();    
+            frm.MdiParent = this;
+            frm.Show();
+        }
         private void btnGestionProductos_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmGestionProductos frm = new frmGestionProductos();
@@ -182,7 +188,7 @@ namespace Sistema_Ferreteria
             frm.Show();
         }
         #endregion
-        #region "Metodos de los botones del menu de reportes"
+        #region "Metodos de los botones del menu de Reportes"
         private void btnVentasFecha_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             rpvVentasFecha rpv = new rpvVentasFecha();
@@ -238,7 +244,7 @@ namespace Sistema_Ferreteria
             rpv.Show();
         }
         #endregion
-        #region "Metodos de los botones del menu de sistema"
+        #region "Metodos de los botones del menu de Sistema"
         private void btnUsuarios_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmUsuario frm = new frmUsuario();
@@ -277,5 +283,7 @@ namespace Sistema_Ferreteria
             XtraMessageBox.Show("Restauracion de la base de datos realizada con exito", "Sistema Ferreteria", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         #endregion
+
+        
     }
 }
