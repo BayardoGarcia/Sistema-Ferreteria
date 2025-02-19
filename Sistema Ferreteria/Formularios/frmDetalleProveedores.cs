@@ -11,16 +11,16 @@ using System.Windows.Forms;
 
 namespace Sistema_Ferreteria.Formularios
 {
-    public partial class frmDetallesClientes : DevExpress.XtraEditors.XtraForm
+    public partial class frmDetalleProveedores : DevExpress.XtraEditors.XtraForm
     {
-        public frmDetallesClientes()
+        public frmDetalleProveedores()
         {
             InitializeComponent();
         }
         private void btnExportarExcel_Click(object sender, EventArgs e)
         {
             ExcelExport excelExport = new ExcelExport();
-            excelExport.PrintGridView("Listado de Clientes", DateTime.Today.ToShortDateString(), gridViewClientes);
+            excelExport.PrintGridView("Listado de Clientes", DateTime.Today.ToShortDateString(), gridViewProveedores);
         }
     }
 }

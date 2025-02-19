@@ -55,6 +55,7 @@
             this.btnRestaurar = new DevExpress.XtraBars.BarButtonItem();
             this.btnVentasEmpleado = new DevExpress.XtraBars.BarButtonItem();
             this.btnDetallesClientes = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDetallesProveedores = new DevExpress.XtraBars.BarButtonItem();
             this.ribPagUsuario = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribPagVenta = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -108,9 +109,10 @@
             this.btnRespaldar,
             this.btnRestaurar,
             this.btnVentasEmpleado,
-            this.btnDetallesClientes});
+            this.btnDetallesClientes,
+            this.btnDetallesProveedores});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 26;
+            this.ribbonControl1.MaxItemId = 27;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribPagUsuario,
@@ -329,6 +331,15 @@
             this.btnDetallesClientes.Name = "btnDetallesClientes";
             this.btnDetallesClientes.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDetallesClientes_ItemClick);
             // 
+            // btnDetallesProveedores
+            // 
+            this.btnDetallesProveedores.Caption = "Listado de Proveedores ";
+            this.btnDetallesProveedores.Id = 26;
+            this.btnDetallesProveedores.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDetallesProveedores.ImageOptions.Image")));
+            this.btnDetallesProveedores.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDetallesProveedores.ImageOptions.LargeImage")));
+            this.btnDetallesProveedores.Name = "btnDetallesProveedores";
+            this.btnDetallesProveedores.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDetallesProveedores_ItemClick);
+            // 
             // ribPagUsuario
             // 
             this.ribPagUsuario.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -373,6 +384,7 @@
             this.ribProductos.ItemLinks.Add(this.btnEntradasProductos);
             this.ribProductos.ItemLinks.Add(this.btnCategorias);
             this.ribProductos.ItemLinks.Add(this.btnProveedores);
+            this.ribProductos.ItemLinks.Add(this.btnDetallesProveedores);
             this.ribProductos.Name = "ribProductos";
             this.ribProductos.Text = "Productos";
             // 
@@ -455,6 +467,7 @@
             this.ClientSize = new System.Drawing.Size(1139, 729);
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbonControl1);
+            this.IconOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("PaginaPrincipal.IconOptions.LargeImage")));
             this.IsMdiContainer = true;
             this.Name = "PaginaPrincipal";
             this.Ribbon = this.ribbonControl1;
@@ -515,5 +528,6 @@
         private DevExpress.XtraBars.BarButtonItem btnRestaurar;
         private DevExpress.XtraBars.BarButtonItem btnVentasEmpleado;
         private DevExpress.XtraBars.BarButtonItem btnDetallesClientes;
+        private DevExpress.XtraBars.BarButtonItem btnDetallesProveedores;
     }
 }

@@ -105,7 +105,7 @@ namespace Sistema_Ferreteria
             ribProductos.Visible = false;
         }
         #endregion
-        #region "Metodos de gestion de base de datos"
+        #region "Metodos de gestion de Base de Datos"
         private void Backup(string route)
         {
             string constring = @"server=localhost; user id=root; password=root; database=ferreteria_db";
@@ -186,6 +186,12 @@ namespace Sistema_Ferreteria
             frmProveedor frm = new frmProveedor();
             frm.MdiParent = this;
             frm.Show();
+        }
+        private void btnDetallesProveedores_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmDetalleProveedores frm = new frmDetalleProveedores();
+            frm.MdiParent = this;
+            frm.Show();    
         }
         #endregion
         #region "Metodos de los botones del menu de Reportes"
@@ -282,8 +288,7 @@ namespace Sistema_Ferreteria
             Restore(open.FileName);
             XtraMessageBox.Show("Restauracion de la base de datos realizada con exito", "Sistema Ferreteria", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-        #endregion
 
-        
+        #endregion
     }
 }

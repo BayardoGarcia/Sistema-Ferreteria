@@ -138,6 +138,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Formularios\frmDetalleProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmDetalleProveedores.Designer.cs">
+      <DependentUpon>frmDetalleProveedores.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmDetallesClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -372,6 +378,9 @@
     <Compile Include="Reportes\rpvVentasProducto.Designer.cs">
       <DependentUpon>rpvVentasProducto.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Formularios\frmDetalleProveedores.resx">
+      <DependentUpon>frmDetalleProveedores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmDetallesClientes.resx">
       <DependentUpon>frmDetallesClientes.cs</DependentUpon>
     </EmbeddedResource>
