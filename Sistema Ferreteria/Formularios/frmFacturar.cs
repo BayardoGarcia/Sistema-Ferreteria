@@ -53,34 +53,42 @@ namespace Sistema_Ferreteria.Formularios
         #region "Eventos de botones"
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            IdCliente = (int)cboCliente.SelectedValue;
-            if (IdCliente == -1)
+            try
             {
-                XtraMessageBox.Show("Seleccione un cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                IdCliente = (int)cboCliente.SelectedValue;
+                if (IdCliente == -1)
+                {
+                    XtraMessageBox.Show("Seleccione un cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                Ventas nuevaVenta = new Ventas(unitOfWork);
+                nuevaVenta.total = Total;
+                nuevaVenta.fecha = dtpFecha.Value;
+                Clientes cliente = (Clientes)unitOfWork.GetObjectByKey(typeof(Clientes), IdCliente);
+                nuevaVenta.cliente = cliente;
+                Usuarios usuario = (Usuarios)unitOfWork.GetObjectByKey(typeof(Usuarios), IdUsuario);
+                nuevaVenta.usuario = usuario;
+                //Produtos del carrito al detalle de la venta
+                foreach (ListaProducto producto in listaProductos)
+                {
+                    DetallesVenta detalleVenta = new DetallesVenta(unitOfWork);
+                    detalleVenta.producto = (Productos)unitOfWork.GetObjectByKey(typeof(Productos), producto.ProductoId);
+                    detalleVenta.venta = nuevaVenta;
+                    detalleVenta.cantidad = producto.Cantidad;
+                    detalleVenta.precio = producto.Precio;
+                    detalleVenta.subtotal = producto.Importe;
+                    nuevaVenta.DetallesVentas.Add(detalleVenta);
+                }
+                nuevaVenta.Save();
+                unitOfWork.CommitChanges();
+                ActualizarStock();
+                XtraMessageBox.Show("Venta realizada con éxito", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            Ventas nuevaVenta = new Ventas(unitOfWork);
-            nuevaVenta.total = Total;
-            nuevaVenta.fecha = dtpFecha.Value;
-            Clientes cliente = (Clientes)unitOfWork.GetObjectByKey(typeof(Clientes), IdCliente);
-            nuevaVenta.cliente = cliente;
-            Usuarios usuario = (Usuarios)unitOfWork.GetObjectByKey(typeof(Usuarios), IdUsuario);
-            nuevaVenta.usuario = usuario;
-            //Produtos del carrito al detalle de la venta
-            foreach (ListaProducto producto in listaProductos)
+            catch (Exception)
             {
-                DetallesVenta detalleVenta = new DetallesVenta(unitOfWork);
-                detalleVenta.producto = (Productos)unitOfWork.GetObjectByKey(typeof(Productos), producto.ProductoId);
-                detalleVenta.venta = nuevaVenta;
-                detalleVenta.cantidad = producto.Cantidad;
-                detalleVenta.precio = producto.Precio;
-                detalleVenta.subtotal = producto.Importe;
-                nuevaVenta.DetallesVentas.Add(detalleVenta);
+                XtraMessageBox.Show("Error al realizar la venta, seleccione un cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            nuevaVenta.Save();
-            unitOfWork.CommitChanges();
-            ActualizarStock();
-            XtraMessageBox.Show("Venta realizada con éxito", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
         }
         private void btnCancelar_Click(object sender, EventArgs e)
         {
